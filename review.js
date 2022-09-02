@@ -37,3 +37,15 @@
 // import
 
 // props, components
+
+
+// ===========================================
+// ===========================================
+
+// Ikkinchi dars 
+ //  --------------- with Teacher
+
+// props, components
+// export import
+// props, children
+// components
