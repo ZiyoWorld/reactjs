@@ -1,29 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Student from './Student';
+import fruits from './fruits';
+import Fruit from "./Fruit";
 
-const students = [
-  {id:1, name: "Mirziyod"},
-  {id:2, name: "Sirojiddin"},
-  {id:3, name: "Sherzod"},
-  {id:4, name: "Xolisbek"},
-  {id:1, name: "Mirziyod"},
-  {id:2, name: "Sirojiddin"},
-  {id:3, name: "Sherzod"},
-  {id:4, name: "Xolisbek"},
-]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <div className='container'>
+            <h1 className='header'>Fruit</h1>
+    <section className='main' id='main'>
     {
-      students.map( (value)=>{
+      fruits.map( (value)=> {
         return(
-          <Student data={value} />
+          <Fruit data={value} />
         )
       })
     }
+
+    </section>
+    
+    </div>
+    
   </React.StrictMode>
 );
 
