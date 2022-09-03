@@ -1,43 +1,3 @@
-// React Course
-
-// Birinchi dars
-// 1. Node js install 
-// 2. npx create-react-app and yarn create react-app
-// 3. yangi papka yaratish
-// 4. react server 3000 da yuradi
-// 5. yarn
-// 6. ReadMe File
-// 7. package.json haqida 
-// 8. dependencies scripts
-// 9. git ignore
-// 10. node_modules
-// 11. src files
-// 12. Single Page Application
-// 13. index.js
-// 14. React and React DOM
-// 15. React VirtualDOM
-// 16. ReactDOM.render()
-// 17. jsx.format
-// 18. react.StrickMode
-// 19. Hi React- in the browser
-// 20. function return
-// 21. import 
-// 22. O'zim shug'ullanaman()
-
-    //  with teacher
-
-    // Birinchi dars
-
-// npx create-react-app
-// package.json, src, public
-// single page applicate
-// virtual ReactDOM
-// ReactDOM.render()
-// jsx
-// import
-
-// props, components
-
 
 // ===========================================
 // ===========================================
@@ -49,3 +9,27 @@
 // export import
 // props, children
 // components
+
+ // O'zim o'rgangan narsalarim
+// 1. function test
+// 2.props and prop
+// 3.git branch and with github working
+// 4. github chiroyli yuklaymiz
+// 5. JavaScript classes
+// 6. Components, React Components
+// 7. export and import 
+// 8. props and component 
+// 9. export default holati haqida
+// 10. Object name o'zgartirish
+// 11. component ichida 2 ta class ochish
+// 12. props parametr
+// 13. this kalit so'zi
+// 14. prop bilan
+// 15. yo'q bo'lgan qiymat undifiend
+// 16. Props bilan object yuborish
+// 17. ? bu bilan object ishlatish
+// 18. children props
+// 19. ES6+ foydalanamiz
+// 20. jsx format bilan ishlaymiz
+// 21. uyga vazifa Fruits app
+
