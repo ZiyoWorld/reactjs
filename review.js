@@ -28,8 +28,8 @@
 // 15. yo'q bo'lgan qiymat undifiend +
 // 16. Props bilan object yuborish +
 // 17. ? bu bilan object ishlatish + 
-// 18. children props
-// 19. ES6+ foydalanamiz
-// 20. jsx format bilan ishlaymiz
-// 21. uyga vazifa Fruits app
+// 18. children props+
+// 19. ES6+ foydalanamiz+
+// 20. jsx format bilan ishlaymiz+
+// 21. uyga vazifa Fruits app+
 
