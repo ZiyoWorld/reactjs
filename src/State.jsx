@@ -1,64 +1,49 @@
-import React, {Component} from 'react';
+import React from "react";
 
-class State extends Component {
-  constructor(props) {
-    super(props);
-    //console.log('constructor');
-    this.state = { 
-      number: 0,
-      title: "Mirziyod state and setState",
-     }
-  }
-
-  
-  render() { 
-    const {number, title} = this.state;
-    //console.log('render')
-
-    const plus =()=>{
-      if(number < 10){
-        this.setState({
-          number: number + 1,
-        });
-        console.log(number);
-      }
-      
-    }
-    const minus = ()=>{
-      if(number  > 0){
-        this.setState({
-          number: number - 1,
-        });
-        console.log(number);
-      }
-      
-    }
-    const onChanges = (e)=>{
-      this.setState({
-        title: e.target.value,
-      })
-    }
-    const onSelect = (e)=>{
-      console.log(e.target.value)
-    }
-    const onCheck = (e)=>{
-      console.log(e.target.checked)
-    }
-    return ( 
+class State extends React.Component{
+  // constructor(props){
+  //   super(props);
+  // }
+  render(){
+    const {data} = this.props;
+    return(
       <div>
-        <h1>{title}</h1>
-         <h1>State: {number}</h1>
-         <input type="text" placeholder='Mirziyod' onChange={onChanges}  />
-         <select onChange={onSelect}>
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-         </select>
-         <input type="checkbox" onChange={onCheck}/>
-         <button onClick={plus}>+</button>
-         <button onClick={minus} >-</button>
+        <table>
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>NickName</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              data.map( (value)=>{
+                return(
+                  <tr key={value.id}>
+                    <td>{value.id}</td>
+                    <td>{value.name}</td>
+                    <td>{value.age}</td>
+                    <td>{value.address}</td>
+                    <td>{value.status}</td>
+                    <td>{value.nickname}</td>
+                    <td>{value.univ}</td>
+                    <td>{value.job}</td>
+                    <td>{value.edit}</td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table>
       </div>
-     );
+    )
   }
 }
- 
 export default State;
