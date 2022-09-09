@@ -21,7 +21,7 @@
 // Uyga vazifada ustoz Cardlarni hammasini ko'paytirish bilan foydalanibdi. men esa map bilan qilib quyaqoldim.
 
 // State
- // 1. UYga vazifa takrorlash
+ // 1. UYga vazifa takrorlash  - 2
  //2. Bu vazifada Teacher Cardlarni Ko'paytirib qilgan ekan. Men esa sekingina mapdan foydalandim Fruits.map() uni githubga netlifyga joyladim.
  // 3. State.jsx yangi fayl ochamiz
  // 4. plus-minus in JavaScript da boshqatdan qilib ko'raman
