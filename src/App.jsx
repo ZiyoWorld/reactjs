@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import {data} from "./data";
+//import {data} from "./data";
 class App extends Component {
     
     state = {  }
