@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app{
+  width: 90%;
+  min-height: 200px;
+  margin: 30px auto;
+  box-shadow: 0 0 10px black;
+  border-radius: 5px;
+  padding: 5px;
+}
+/* table{
+  width: 100%;
+}
+.thead_app{
+  background-color: rgb(211, 211, 211);
+  padding: 45px 0;
+}
+
+table, tr, th, td{
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tbody_app{
+  overflow: scroll;
+} */
+
+table{
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+
+
+}
+table, tr,td, th{
+  border-collapse: collapse;
+}
+tbody{
+  overflow-x: scroll;
+}
