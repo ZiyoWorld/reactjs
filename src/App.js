@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import Table from './Table';
+// import Table from './Table';
+import State from './State';
 
 class App extends Component {
   
@@ -8,7 +9,8 @@ class App extends Component {
   }
   render() { 
     return ( 
-      <Table />
+      // <Table />
+      <State />
      );
   }
 }
