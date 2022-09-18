@@ -20,4 +20,4 @@
 // 8. map ma'lumotlarni chiqarish
 // 9. ma'lumotlarni add, delete, update, filter and select Crud
 // 10 filter qilish 
-// 11. Crudni tushunmasdan yangi mavzuga o'tmaslik
+

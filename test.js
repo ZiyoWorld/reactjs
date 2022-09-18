@@ -14,4 +14,4 @@ const obj = {
 }
 const status = 'name';
 console.log(obj.name, obj.surname);
-console.log(obj[status]);
+
