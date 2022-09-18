@@ -35,6 +35,13 @@ class State extends Component {
             data: res,
            })
         }
+        const onDelete = (id)=>{
+          console.log(id);
+          let res = this.state.data.filter( (value)=> value.id !== id);
+          this.setState({
+            data: res,
+          })
+        }
 
         return ( 
             <>
@@ -54,13 +61,44 @@ class State extends Component {
             <input type="radio" onChange={onCheck} />
             <hr />
             <input type="text" placeholder="filter" onChange={onFilter} />
-            {
-                this.state.data.map(({id, name, status})=>{
-                    return(
-                        <h1 key={id}>{id} {name} {status}</h1>
+             <table border="1" width={"100%"}>
+                <thead>
+                    <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {
+                    this.state.data.length ? (
+                        this.state.data.map(({id, name, status})=>{
+                            return(
+                                
+                                <tr key={id}>
+                            <td>{id}</td>
+                            <td>{name}</td>
+                            <td>{status}</td>
+                            <td>
+                                <button onClick={()=> onDelete(id)}>Delete</button> </td>
+                            <td>Edit</td>
+                        </tr>
                     )
-                })
+                })) :(
+                <tr>
+                    <th colSpan={5}>
+                        <h1>No data</h1>
+                    </th>
+                </tr>
+                )
+
             }
+                </tbody>
+             </table>
+            
             </>
          );
     }
