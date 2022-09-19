@@ -11,4 +11,7 @@
 // 1.state CRUD
 // 2.Advanced
 // table yasaymiz 
-// table delete function bilan ishlaymiz
+// table delete function bilan ishlaymiz.
+
+// 5. add dobavit
+// 6. 
