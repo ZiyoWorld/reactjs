@@ -8,11 +8,11 @@ class State extends Component {
          count: 0,
          data: student,
          name: "Mirziyod",
-         surname: "Sunatillayev",
+         status: "IT",
          
      }
     render() { 
-        const {count, name, surname} = this.state;
+        const {count, name, status} = this.state;
         
         const plus =()=>{if(count < 10) {this.setState({count: count + 1})}};
         const minus =()=>{if(count > 0){ this.setState({ count: count - 1})}};
@@ -42,6 +42,18 @@ class State extends Component {
             data: res,
           })
         }
+        const onAdd = ()=>{
+        let user = {
+            id: Date.now(),
+            name: name,
+            status: status,
+        }
+        this.setState({
+            name: '',
+            status: ''
+        });
+        console.log(user);
+        }
 
         return ( 
             <>
@@ -49,9 +61,8 @@ class State extends Component {
             <button onClick={plus}  >+</button>
             <button onClick={minus} >-</button>
             <h1>Name: {name}</h1>
-            <h1>SurName: {surname}</h1>
-            <input type="text" name="name" placeholder="name" onChange={onChange} />
-            <input type="text" name="surname" placeholder="surname" onChange={onChange} />
+            <h1>SurName: {status}</h1>
+            
             <hr />
             <select onClick={onSelect}>
                 <option value="male">male</option>
@@ -60,11 +71,20 @@ class State extends Component {
             <input type="checkbox" onChange={onCheck} />
             <input type="radio" onChange={onCheck} />
             <hr />
-            <input type="text" placeholder="filter" onChange={onFilter} />
+            <h3>Filter</h3>
+            <label htmlFor="filter">Filter</label>
+            <input type="text" id="filter" placeholder="filter" onChange={onFilter} />
+            <hr />
+            <h3>Add</h3>
+            <label htmlFor="addname">Add name</label>
+            <input type="text" name="name" placeholder="name" onChange={onChange} />
+            <label htmlFor="addstatus">Add Status</label>
+            <input type="text" id="status"  name="status" placeholder="status" onChange={onChange} />
+            <button onClick={onAdd}>Add</button>
+            <hr />
              <table border="1" width={"100%"}>
                 <thead>
                     <tr>
-
                     <th>ID</th>
                     <th>Name</th>
                     <th>Status</th>

@@ -1,3 +1,6 @@
+body{
+  background-color: #eea3a3;
+}
 table, tr, td, th{
   border-spacing: 0;
   min-width: 90px;
@@ -79,3 +82,4 @@ tr:hover #td_edit{
   background-color: #fff;
   color: blue;
 }
+
