@@ -106,7 +106,7 @@ class State extends Component {
             </select>
             <input type="text" id="filter" placeholder="filter" onChange={onFilter} />
             <hr />
-            <h3>Add</h3>
+            <h3>Add</h3>    
             <label htmlFor="addname">Add name</label>
             <input type="text" value={name} name="name" placeholder="name" onChange={onChange} />
             <label htmlFor="addstatus">Add Status</label>
