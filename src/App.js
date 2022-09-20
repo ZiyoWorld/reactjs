@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-// import Table from './Table';
+ import Table from './Table';
 //import State from './State';
-import Crud from "./Crud";
+//import Crud from "./Crud";
 
 class App extends Component {
   
@@ -10,9 +10,9 @@ class App extends Component {
   }
   render() { 
     return ( 
-      // <Table />
+      <Table />
       //<State />
-      <Crud />
+      //<Crud />
      );
   }
 }
