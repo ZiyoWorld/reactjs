@@ -8,6 +8,7 @@
 // Advanced
 
 // self-study
+
 // 1.state CRUD
 // 2.Advanced
 // table yasaymiz 
@@ -26,3 +27,4 @@
 // 15. Table editni ham o'zgartirish
 // 16. Yangi branch ochib uyga vaizfalrni Saqlayman.
 
+=======
