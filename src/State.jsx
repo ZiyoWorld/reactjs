@@ -7,12 +7,14 @@ class State extends Component {
     state = { 
          count: 0,
          data: student,
-         name: "Mirziyod",
-         status: "IT",
+         name: "",
+         status: "",
+         search: "id",
+         active: null,
          
      }
     render() { 
-        const {count, name, status} = this.state;
+        const {count, name, status, data, search, active} = this.state;
         
         const plus =()=>{if(count < 10) {this.setState({count: count + 1})}};
         const minus =()=>{if(count > 0){ this.setState({ count: count - 1})}};
@@ -26,11 +28,13 @@ class State extends Component {
         const onChange = (e)=>{
             this.setState({
                 [e.target.name]: e.target.value
-            })
+            });
+           
         }
         const onFilter = (e)=>{
-            console.log(e.target.value);
-           let res = student.filter( (value)=> value.name.includes(e.target.value));
+            const {value} = e.target;
+           let res = student.filter( (item)=> 
+                 `${item[search]}`.toLowerCase().includes(value.toLowerCase()));
            this.setState({
             data: res,
            })
@@ -48,11 +52,34 @@ class State extends Component {
             name: name,
             status: status,
         }
+        
         this.setState({
             name: '',
-            status: ''
+            status: '',
+            data: [...data, user],
         });
         console.log(user);
+        }
+        const onSelectFilter = e =>{
+            this.setState({
+                search: e.target.value
+            });
+        }
+        const onEdit = ({id,name,status}, isSave)=>{
+            if(isSave){
+                let res = data.map( (value) =>
+                value.id === active.id ? {...value, name: this.state.name, status: this.state.status } : value)
+                this.setState({
+                    active: null,
+                    data: res,
+                })
+            }else{
+                this.setState({
+                    name: name,
+                    status: status,
+                    active: {id, name, status},
+                })
+            }
         }
 
         return ( 
@@ -62,7 +89,6 @@ class State extends Component {
             <button onClick={minus} >-</button>
             <h1>Name: {name}</h1>
             <h1>SurName: {status}</h1>
-            
             <hr />
             <select onClick={onSelect}>
                 <option value="male">male</option>
@@ -73,13 +99,18 @@ class State extends Component {
             <hr />
             <h3>Filter</h3>
             <label htmlFor="filter">Filter</label>
+            <select name=""id="" onClick={onSelectFilter}>
+                <option value="id">ID</option>
+                <option value="name">Name</option>
+                <option value="status">Status</option>
+            </select>
             <input type="text" id="filter" placeholder="filter" onChange={onFilter} />
             <hr />
             <h3>Add</h3>
             <label htmlFor="addname">Add name</label>
-            <input type="text" name="name" placeholder="name" onChange={onChange} />
+            <input type="text" value={name} name="name" placeholder="name" onChange={onChange} />
             <label htmlFor="addstatus">Add Status</label>
-            <input type="text" id="status"  name="status" placeholder="status" onChange={onChange} />
+            <input type="text" value={status} id="status"  name="status" placeholder="status" onChange={onChange} />
             <button onClick={onAdd}>Add</button>
             <hr />
              <table border="1" width={"100%"}>
@@ -100,11 +131,28 @@ class State extends Component {
                                 
                                 <tr key={id}>
                             <td>{id}</td>
-                            <td>{name}</td>
-                            <td>{status}</td>
+                            <td>{
+                                active?.id === id ? ( <input type="text"
+                                 name="name"
+                                 onChange={onChange} 
+                                 value={this.state.name} />) : (name)
+                                }</td>
+                            <td>{
+                                active?.id === id ? ( <input 
+                                    type="text" 
+                                    name="status" 
+                                    onChange={onChange} 
+                                    value={this.state.status} />) : (status)
+                                }</td>
                             <td>
-                                <button onClick={()=> onDelete(id)}>Delete</button> </td>
-                            <td>Edit</td>
+                                <button onClick={()=> onDelete(id)}>Delete</button> 
+                            </td>
+                            <td>
+                                <button onClick={()=> onEdit({id, name, status}, active?.id === id )}>
+                                 {active?.id === id ? "save" : "edit"}    
+                                </button> 
+                            </td>
+                            
                         </tr>
                     )
                 })) :(
