@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Table from './Table';
+
 
 class App extends Component {
   
@@ -8,7 +8,7 @@ class App extends Component {
   }
   render() { 
     return ( 
-      <Table />
+      <h1> Hello world</h1>
      );
   }
 }
