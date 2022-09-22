@@ -1,17 +1,13 @@
 
-// function getName(title){
-//     console.log(title)
-// }
-// // getName("hey");
 
-// const call = ()=> getName("hey");
+const arr = [];
 
-// call();
-
-const obj = {
-    name: 'Hey',
-    surname: "Hay"
+const news = ()=>{
+    let user ={
+        id: 1,
+        name: "mirziyod"
+    }
+    arr.push(user);
+    console.log(arr);
 }
-const status = 'name';
-console.log(obj.name, obj.surname);
-
+news();

@@ -1,0 +1,172 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #e0dede;
+}
+.container{
+  width: 95%;
+  margin: 0 auto;
+}
+.container h1{
+  text-align: left;
+  margin: 25px 0;
+}
+.shoppings{
+  width: 95%;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;  
+  height: 75%;
+  margin: 0 auto;
+}
+
+/* Texno Card styles */
+.card, .add{
+  width: 30%;
+  max-height: 400px;
+  border-radius: 5px;
+  margin: 10px 15px;
+}
+.card{
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  transition: all 0.5s linear;
+}
+.card img{
+  width: 30%;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+.card button{
+  padding: 8px 3rem;
+  border: none;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: all 0.25s linear;
+}
+.card h2{
+  margin: 5px 0;
+}
+.card button:hover{
+  background-color: rgb(0, 248, 165);
+  /* color: #fff; */
+  
+}
+.card:hover{
+  box-shadow: 0 0 20px #e7e7e7;
+  border: 1px solid rgb(148, 148, 148);
+  transform: scale(1.1);
+}
+.add{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  min-height: 200px;
+  margin-top: 10px;
+  border: 1px solid rgb(71, 71, 248);
+}
+.add a{
+  padding: 0 15px;
+  font-size: 50px;
+  border: 1px dashed black; 
+  background-color: transparent;
+  margin: 10px 0;
+  transition: all 0.25s linear;
+  text-decoration: none;
+  color: black;
+}
+.add a:hover{
+  transform: scale(1.1);
+}
+.modalbox{
+  padding: 30px;
+  width: 95%;
+  margin: 30px 0;
+  background-color: #fff;
+  border: 1px solid blue;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.modal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+}
+.modal label{
+  margin-top: 5px;
+  text-align: left;
+  display: inline-block;
+  margin-right: auto;
+  
+}
+.modal input{
+  width: 100%;
+  outline: none;
+  background-color: #e0dede;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  border-radius: 5px;
+}
+.modal select{
+  width: 100%;
+  background-color: #e0dede;
+  outline: none;
+  border: none;
+  margin: 7px 0;
+  padding: 5px 5px;
+  border-radius: 2px;
+}
+.modal input:focus{
+  box-shadow: 0 0 10px black;
+  background-color: #fff;
+}
+.modal select:focus{
+  box-shadow: 0 0 5px black;
+  background-color: #fff;
+}
+.buttons{
+  margin-right: auto;
+  margin-top: 10px;
+}
+.buttons button{
+  padding: 8px 25px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+}
+.buttons button:nth-child(1){
+  background-color: rgb(44, 44, 226);
+  color: #fff;
+};
+.modaldata{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
