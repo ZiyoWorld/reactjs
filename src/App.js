@@ -13,6 +13,7 @@ class App extends Component {
      address: '',
      phone: '',
      email: '',
+     active: null,
 
   }
   render() { 
@@ -28,10 +29,14 @@ class App extends Component {
           modalBtn: true,
         })
       }
-      const onCloseBtn = ()=>{
-        this.setState({
-          modalBtn: false
-        })
+      const onCloseBtn = (id, isSave)=>{
+        if(isSave){
+          let res = data.filter( (value)=> value.id !== id);
+          this.setState({
+            data: res,
+            modalBtn: false
+          })
+        }
       };
 
       const onNewCard = ()=>{
@@ -54,8 +59,6 @@ class App extends Component {
             phone: '',
             email: '',
           })
-        
-        
       };
 
       const onCloseModal = ()=>{
@@ -66,6 +69,13 @@ class App extends Component {
           address: '',
           phone: '',
           email: '',
+        })
+      };
+
+      const onDeleteBtn = (id)=>{
+        let res = data.filter( (value)=> value.id !== id);
+        this.setState({
+          data: res
         })
       }
    
@@ -84,12 +94,14 @@ class App extends Component {
                       <button onClick={onOpenBtn}>Open</button>
                       {
                        modalBtn ? (<div className="modaldata">
-                         <h5>Company name: {value.name}</h5>
+                          <h2>About Company</h2>
+                        <h5>Company name: {value.name}</h5>
                         <h5>Address: {value.address}</h5>
                         <h5>Type: {value.type}</h5>
                         <h5>Phone:{value.phone}</h5>
                         <h5>Email:{value.email}</h5>
-                        <button onClick={onCloseBtn}>Close</button>
+                        <button onClick={()=>onCloseBtn(value.id, this.state.active?.id === value.id)}>Close</button>
+                        <button onClick={()=>onDeleteBtn(value.id)}>Delete</button>
                        </div>) : ("")
                       }
                     </div>
