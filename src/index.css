@@ -170,3 +170,6 @@ body{
   flex-direction: column;
   margin: 0 auto;
 }
+.modaldata button{
+  margin: 5px 5px;
+}
