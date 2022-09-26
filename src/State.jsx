@@ -1,13 +1,18 @@
 import React, {Component} from "react";
-import {Container, Title} from './stateStyle';
+import {Box, Container, Desc, Title} from './stateStyle';
+
+
 class State extends Component {
-    constructor(props) {
-        super(props);
-    }
+    
     state = {  }
     render() { 
         return ( <Container>
-            <Title>Styled Components</Title>
+            <Box bg="black" type="large">Large</Box>
+            <Box bg="yellow" type="medium">Medium</Box>
+            <Box bg="red"  type="small">Small</Box>
+            <Title>Hey Title</Title>
+            <Desc left>Description</Desc>
+            <Desc>Description</Desc>
         </Container> );
     }
 }
