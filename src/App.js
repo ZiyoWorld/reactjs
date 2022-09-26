@@ -19,9 +19,11 @@ class App extends Component {
   render() { 
       const {name, address, phone, type,  data, email, modalBtn} = this.state;
       const onChange = (e)=>{
+        
           this.setState({
             [e.target.name]: e.target.value,
           });
+        
       };
 
       const onOpenBtn = ()=>{
@@ -40,16 +42,17 @@ class App extends Component {
       };
 
       const onNewCard = ()=>{
+        
         let user = {
           id: Date.now(),
-          name: name,
-          address: address,
-          type: type,
-          phone: phone,
-          email: email,
+          name: this.state.name,
+          address: this.state.address,
+          type: this.state.type,
+          phone: this.state.phone,
+          email: this.state.email,
         }
-        console.log(user);
         
+        console.log(user);
           this.setState({
             data: [...data, user],
             id: "",
@@ -135,7 +138,7 @@ class App extends Component {
                   <label htmlFor="email">Email manzilni yuboring</label>
                   <input type="text"  name="email" id="email" value={email} onChange={onChange} />
                   <div className="buttons">
-                  <button type="submit" onClick={ onNewCard }>Confirm</button>
+                  <button type="submit" onClick={()=> onNewCard( name, address, type,phone, email) }>Confirm</button>
                   <button onClick={onCloseModal}>Close</button>
                 </div>
               </div>
