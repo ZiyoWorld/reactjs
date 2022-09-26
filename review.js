@@ -1,4 +1,11 @@
-/// homework 3 
+// React Course 6 - lesson
 
-// 1. I work with data
-// 2. 
+// ===== Styled Components =======
+
+// 1. styled -components css o'rnida ishlatiladi.
+// 2. takrorlash CRUD
+// 3. css larni JavaScript ichida ishlatib ketamiz
+// 4. npm i styled-components & yarn add styled-components;
+// 5. import styled from 'styled-components'
+// 6. ikki xil usulda ishlatamiz styled("h1") & styled.h1
+// 7. 
