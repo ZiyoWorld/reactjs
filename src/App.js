@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import State from "./State";
 
 class App extends Component {
   
@@ -9,7 +8,7 @@ class App extends Component {
   render() {
     return(
       <div>
-          <State />
+          <h1>Hello World</h1>
       </div>
     ) 
   }
