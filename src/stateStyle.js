@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 
 export const Container = styled('div')`
 display: flex;
@@ -6,47 +6,46 @@ background-color: coral;
 color: black;
 padding: 20px;
 `;
-
-const common = css`
-    font-weight: 400;
-    font-family: bold;
-    padding: 10px;
-    border: 1px solid black;
-    height: fit-content;
-`
-
-export const Title = styled.h1`
-    color: blue;
-    ${common}
-`;
-
-export const Desc = styled.h1`
-    ${common};
-    color: ${({left})=> left ? "red" : "green"};
-
-`;
-
-const getSize = (props)=>{
-    switch(props.type){
-        case 'large' : return '200px';
-        case 'medium' : return '150px';
-        case 'small' : return '100px';
-        default : return "150px"
-    }
+const rotate = keyframes`
+from{
+    transform: rotate(0deg);
 }
+to{
+    transform: rotate(360deg);
+}
+`
+const common = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    border-radius:5px;
+    border: none;
+    background-color: blue;
+    cursor: pointer;
+    color: white;
+    :active{
+        transform: scale(0.97);
+    }
+`
+export const Button = styled.button`
+   ${common}
+`;
 
-export const Box = styled.div`
-background-color: ${(props)=> props.bg};
+export const AcctiveButton = styled('div')`
+   ${common}
+   height: 50px;
+`;
+export const Rotate = styled.div`
+width: 100px;
+height: 100px;
+border-radius: 50%;
 display: flex;
 justify-content: center;
 align-items: center;
-/* width: ${(props) => props.type === 'large' ? '200px': '150px'};
-height: ${(props) => props.type === 'large' ? '200px': '150px'}; */
-width: ${getSize};
-height: ${getSize};
-border: 2px solid black;
-margin: 0 10px;
-font-size: 24px;
-`;
+background-color: transparent;
+border: 2px solid red;
+animation: ${rotate} 2s linear infinite;
 
-
+`
