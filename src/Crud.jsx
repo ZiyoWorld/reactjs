@@ -8,6 +8,7 @@ class Crud extends Component {
         name: "",
         status: "",
         search: 'id',
+        active: null,
 
      }
     render() {
@@ -37,12 +38,18 @@ class Crud extends Component {
                 name: this.state.name,
                 status: this.state.status,
             }
-            console.log(res);
-            this.setState({
-                data: [...this.state.data, res ],
-                name: "",
-                status: "",
-            })
+            if(this.state.name.length > 0 && this.state.status.length > 0){
+                this.setState({
+                    data: [...this.state.data, res ],
+                    name: "",
+                    status: "",
+                })  
+            }else{
+                this.setState({
+                    data: this.state.data,
+                })
+            }
+           
         };
         
         const onFilter = (e)=>{
@@ -53,6 +60,24 @@ class Crud extends Component {
            });
            console.log(res);
         };
+        
+        const onEdit = ({id, name, status}, isSave)=>{
+            if(isSave){
+                let res = this.state.data.map( (value)=> value.id === this.state.active.id ? {id, name: this.state.name, status: this.state.status} : value)
+                this.setState({
+                    data: res,
+                    active: null,
+                })
+                
+            }else{
+                this.setState({
+                    name: name,
+                    status: status,
+                    active: {id, name, status},
+                });
+            }
+            
+        }
 
         return ( 
         <div>
@@ -89,13 +114,32 @@ class Crud extends Component {
                                 return(
                                     <tr key={id}>
                                     <td>{id}</td>
-                                    <td>{name}</td>
-                                    <td>{status}</td>
+                                    <td>{
+                                        this.state.active?.id === id ?( 
+                                        <input type="text" 
+                                        value={this.state.name}
+                                        onChange={onChange}
+                                        name="name"
+                                          /> ): ( name)
+                                        }
+                                        </td>
+                                    <td>
+                                    {
+                                        this.state.active?.id === id ?( 
+                                        <input type="text" 
+                                        value={this.state.status} 
+                                        onChange={onChange}
+                                        name="status"
+                                        /> ): ( status)
+                                    }
+                                    </td>
                                     <td>
                                         <button onClick={()=> onDelete(id)}>Delete</button>
                                     </td>
                                     <td>
-                                        Edit
+                                        <button onClick={ ()=> onEdit({id, name, status}, this.state.active?.id === id )}>
+                                            {this.state.active?.id === id ? "save" : "edit"}
+                                        </button>
                                     </td>
                                 </tr>
                             )
