@@ -19,3 +19,14 @@
 // 4. onChange, onClick
 // 5. input, checkbox, select
 
+// ================== 4 - lesson name is crud
+// 1. function call
+// 2. multi change input
+// 3. crud and filter
+
+// ================= 5 - lesson state crud advanced
+// 1. crud continue
+// 2. advanced
+// 3. appilication qilamiz
+
+
