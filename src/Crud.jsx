@@ -7,6 +7,7 @@ class Crud extends Component {
         filter: "",
         name: "",
         status: "",
+        search: 'id',
 
      }
     render() {
@@ -15,6 +16,12 @@ class Crud extends Component {
             this.setState({
                 [e.target.name]: e.target.value,
             })
+        };
+        const onSelect = (e)=>{
+            this.setState({
+                search: e.target.value,
+            });
+            console.log(e.target.value)
         }
 
         const onDelete = id =>{
@@ -24,13 +31,46 @@ class Crud extends Component {
                 data: res,
             })
         }
-        const onFilter = ()=>{
-           
-        }
+        const onAdd = ()=> {
+            let res = {
+                id: Date.now(),
+                name: this.state.name,
+                status: this.state.status,
+            }
+            console.log(res);
+            this.setState({
+                data: [...this.state.data, res ],
+                name: "",
+                status: "",
+            })
+        };
+        
+        const onFilter = (e)=>{
+            const {value} = e.target;
+           let res = student.filter ( (item)=> `${item[this.state.search]}`.toLowerCase().includes(value.toLowerCase()));
+           this.setState({
+            data: res,
+           });
+           console.log(res);
+        };
+
         return ( 
         <div>
-            
-            <input type="text" name="filter" value={this.state.filter} onChange={onFilter} />
+            <h1>Name: {this.state.name}</h1>
+            <h1>Status: {this.state.status}</h1>
+            <input type="text" name="name" value={this.state.name}
+            onChange={onChange} placeholder={"name"}
+            />
+            <input type="text" placeholder="status" name="status" value={this.state.status}
+            onChange={onChange}
+            />
+            <button onClick={onAdd}>Add</button> <br />
+            <select name="search" id="" onChange={onSelect}>
+                <option value="Id">Id</option>
+                <option value="name">Name</option>
+                <option value="status">Status</option>
+            </select>
+            <input type="text" name="filter" placeholder="filter" onChange={onFilter} />
             
             <table  className="table">
                 <thead>
