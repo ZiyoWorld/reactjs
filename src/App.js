@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import State from "./State";
+//import State from "./State";
 // import {Property} from "./Property";
-
+//import State4 from "./State4";
+import Crud from "./Crud";
 class App extends Component {
   
   state = {  
@@ -19,7 +20,12 @@ class App extends Component {
 
 
           {/*===== State ==== */}
-          <State />
+          {/* <State /> */}
+          {/* ======State 4 ====== */}
+          {/* <State4 /> */}
+          {/* ======= Crud ====== */}
+          <Crud />
+
       </div>
     ) 
   }
