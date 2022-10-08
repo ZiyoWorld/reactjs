@@ -7,6 +7,8 @@ class Crud extends Component {
         filter: "",
         name: "",
         status: "",
+        search: 'id',
+        active: null,
 
      }
     render() {
@@ -15,6 +17,12 @@ class Crud extends Component {
             this.setState({
                 [e.target.name]: e.target.value,
             })
+        };
+        const onSelect = (e)=>{
+            this.setState({
+                search: e.target.value,
+            });
+            console.log(e.target.value)
         }
 
         const onDelete = id =>{
@@ -24,13 +32,70 @@ class Crud extends Component {
                 data: res,
             })
         }
-        const onFilter = ()=>{
+        const onAdd = ()=> {
+            let res = {
+                id: Date.now(),
+                name: this.state.name,
+                status: this.state.status,
+            }
+            if(this.state.name.length > 0 && this.state.status.length > 0){
+                this.setState({
+                    data: [...this.state.data, res ],
+                    name: "",
+                    status: "",
+                })  
+            }else{
+                this.setState({
+                    data: this.state.data,
+                })
+            }
            
+        };
+        
+        const onFilter = (e)=>{
+            const {value} = e.target;
+           let res = student.filter ( (item)=> `${item[this.state.search]}`.toLowerCase().includes(value.toLowerCase()));
+           this.setState({
+            data: res,
+           });
+           console.log(res);
+        };
+        
+        const onEdit = ({id, name, status}, isSave)=>{
+            if(isSave){
+                let res = this.state.data.map( (value)=> value.id === this.state.active.id ? {id, name: this.state.name, status: this.state.status} : value)
+                this.setState({
+                    data: res,
+                    active: null,
+                })
+                
+            }else{
+                this.setState({
+                    name: name,
+                    status: status,
+                    active: {id, name, status},
+                });
+            }
+            
         }
+
         return ( 
         <div>
-            
-            <input type="text" name="filter" value={this.state.filter} onChange={onFilter} />
+            <h1>Name: {this.state.name}</h1>
+            <h1>Status: {this.state.status}</h1>
+            <input type="text" name="name" value={this.state.name}
+            onChange={onChange} placeholder={"name"}
+            />
+            <input type="text" placeholder="status" name="status" value={this.state.status}
+            onChange={onChange}
+            />
+            <button onClick={onAdd}>Add</button> <br />
+            <select name="search" id="" onChange={onSelect}>
+                <option value="Id">Id</option>
+                <option value="name">Name</option>
+                <option value="status">Status</option>
+            </select>
+            <input type="text" name="filter" placeholder="filter" onChange={onFilter} />
             
             <table  className="table">
                 <thead>
@@ -49,13 +114,32 @@ class Crud extends Component {
                                 return(
                                     <tr key={id}>
                                     <td>{id}</td>
-                                    <td>{name}</td>
-                                    <td>{status}</td>
+                                    <td>{
+                                        this.state.active?.id === id ?( 
+                                        <input type="text" 
+                                        value={this.state.name}
+                                        onChange={onChange}
+                                        name="name"
+                                          /> ): ( name)
+                                        }
+                                        </td>
+                                    <td>
+                                    {
+                                        this.state.active?.id === id ?( 
+                                        <input type="text" 
+                                        value={this.state.status} 
+                                        onChange={onChange}
+                                        name="status"
+                                        /> ): ( status)
+                                    }
+                                    </td>
                                     <td>
                                         <button onClick={()=> onDelete(id)}>Delete</button>
                                     </td>
                                     <td>
-                                        Edit
+                                        <button onClick={ ()=> onEdit({id, name, status}, this.state.active?.id === id )}>
+                                            {this.state.active?.id === id ? "save" : "edit"}
+                                        </button>
                                     </td>
                                 </tr>
                             )
