@@ -31,14 +31,20 @@ class App extends Component {
           modalBtn: true,
         })
       }
-      const onCloseBtn = (id, isSave)=>{
-        if(isSave){
-          let res = data.filter( (value)=> value.id !== id);
-          this.setState({
-            data: res,
-            modalBtn: false
-          })
-        }
+      const onCloseBtn = (id)=>{
+        let res = this.state.data.filter( value => value.id !== id);
+        console.log(res);
+          if(res){
+            this.setState({
+              modalBtn: false,
+            })
+          }else{
+            this.setState({
+              modalBtn: true,
+            })
+          }
+          
+        
       };
 
       const onNewCard = ()=>{
@@ -53,6 +59,7 @@ class App extends Component {
         }
         
         console.log(user);
+        if(name.length > 0 && type.length > 0 && address.length > 0 && phone.length > 0 && email.length > 0){
           this.setState({
             data: [...data, user],
             id: "",
@@ -61,7 +68,13 @@ class App extends Component {
             address: '',
             phone: '',
             email: '',
+          });
+        }else{
+          this.setState({
+            data: this.state.data,
           })
+        }
+          
       };
 
       const onCloseModal = ()=>{
@@ -103,7 +116,7 @@ class App extends Component {
                         <h5>Type: {value.type}</h5>
                         <h5>Phone:{value.phone}</h5>
                         <h5>Email:{value.email}</h5>
-                        <button onClick={()=>onCloseBtn(value.id, this.state.active?.id === value.id)}>Close</button>
+                        <button onClick={()=>onCloseBtn(value.id)}>Close</button>
                         <button onClick={()=>onDeleteBtn(value.id)}>Delete</button>
                        </div>) : ("")
                       }
