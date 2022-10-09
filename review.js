@@ -29,4 +29,10 @@
 // 2. advanced
 // 3. appilication qilamiz
 
+// ================ 6 - lesson styled components =====
+// 1. styled components
+// 2. {css}
+// 3. props
+// 4. function call
 
+// 

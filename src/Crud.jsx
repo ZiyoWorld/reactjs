@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {student} from './moke';
+
 class Crud extends Component {
     
     state = { 
@@ -54,7 +55,7 @@ class Crud extends Component {
         
         const onFilter = (e)=>{
             const {value} = e.target;
-           let res = student.filter ( (item)=> `${item[this.state.search]}`.toLowerCase().includes(value.toLowerCase()));
+           let res = this.state.data.filter ( (item)=> `${item[this.state.search]}`.toLowerCase().includes(value.toLowerCase()));
            this.setState({
             data: res,
            });
@@ -154,6 +155,7 @@ class Crud extends Component {
                     }
                 </tbody>
             </table>
+            
               
         </div> );
     }
