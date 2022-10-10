@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Interihance from "./Interihance";
 import State from "./State";
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
     return ( 
       <div>
         <State />
+        <Interihance />
       </div>
      );
   }
