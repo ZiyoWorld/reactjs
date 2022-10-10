@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import Interihance from "./Interihance";
-import State from "./State";
+
 
 class App extends Component {
   state = { 
@@ -9,8 +8,7 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-        <State />
-        <Interihance />
+       <h1>Hello World</h1>
       </div>
      );
   }
