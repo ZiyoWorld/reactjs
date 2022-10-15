@@ -17,10 +17,14 @@ export const Container = styled.div`
 `;
 export const Wrapper = styled.div`
    /* border: 1px solid yellow; */
+   min-height: 60px;
    height: 60px;
    display: flex;
    align-items: center;
    justify-content: space-between;
+   position: sticky;
+   top: 0;
+   background-color: #212121;
 `;
 
 export const Category = styled.div` 
@@ -37,6 +41,7 @@ Icons.Burger = styled(burger)`
     width: 26px;
     height: 26px;
     margin-right: 20px;
+    margin-left: 2px;
     cursor: pointer;
 `;
 
@@ -100,6 +105,7 @@ export const User = styled.img`
     border-radius: 50%;
     margin-left: 20px;
     padding: 1px;
+    margin-right: 5px;
 `;
     
 
