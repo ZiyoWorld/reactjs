@@ -23,6 +23,8 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 10px 0;
+
 `;
 export const Title = styled.div`
     display: flex;
@@ -33,7 +35,7 @@ export const Title = styled.div`
     font-size: 18px;
     line-height: 20px;
     height: 40px;
-    color: ${({title})=> (title ? "rgba(255, 255, 255, 0.6)" : "#fff")};
+    color: ${({title}) => (title ? "rgba(255, 255, 255, 0.6)" : "#fff")};
     margin-left: 24px;
 `;
 
