@@ -3,7 +3,7 @@ import { ReactComponent as trending } from "../assets/icons/trending.svg";
 import { ReactComponent as subscribe } from "../assets/icons/subscribe.svg";
 import { ReactComponent as library } from "../assets/icons/library.svg";
 import { ReactComponent as history } from "../assets/icons/history.svg";
-import { ReactComponent as video } from "../assets/icons/video.svg";
+import { ReactComponent as videos } from "../assets/icons/videos.svg";
 import { ReactComponent as watchlater } from "../assets/icons/watchlater.svg";
 import { ReactComponent as like } from "../assets/icons/like.svg";
 import { ReactComponent as arrow } from "../assets/icons/arrow.svg";
@@ -11,6 +11,8 @@ import { ReactComponent as youtube } from "../assets/icons/youtube.svg";
 import { ReactComponent as settings } from "../assets/icons/settings.svg";
 import { ReactComponent as help } from "../assets/icons/help.svg";
 import { ReactComponent as report } from "../assets/icons/report.svg";
+
+
 
 
 
@@ -40,7 +42,7 @@ export const sidebar = [
         data: [
             {id: 1, title: "Library", icon: library},
             {id: 2, title: "History", icon: history},
-            {id: 3, title: "Your Videos", icon: video},
+            {id: 3, title: "Your Videos", icon: videos},
             {id: 4, title: "Watch later", icon: watchlater},
             {id: 5, title: "Liked Videos", icon: like},
             {id: 6, title: "Show more", icon: arrow},
@@ -50,7 +52,7 @@ export const sidebar = [
         id: 3, 
         title: "Subscriptions",
         data: [
-            {id: 2, title: "Mirziyod Sunatillayev", icon: youtube},
+            {id: 2, title: "Mirziyod Sunatillayev", icon: youtube },
             {id: 1, title: "Mirziyod Sunatillayev", icon: youtube},
             {id: 3, title: "Mirziyod Sunatillayev", icon: youtube},
             {id: 4, title: "Mirziyod Sunatillayev", icon: youtube},

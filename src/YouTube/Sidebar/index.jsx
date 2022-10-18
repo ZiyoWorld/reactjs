@@ -18,7 +18,7 @@ export default class Sidebar extends Component{
                             data.map( ({icon: Icon, id, title: subTitle})=>{
                                 return(
                                     <ItemWrapper key={id}>
-                                        <Icon />    
+                                        <Icon />  
                                         <Title>{subTitle}          </Title>
                                     </ItemWrapper>
                                 )

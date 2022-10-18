@@ -4,7 +4,7 @@ import { ReactComponent as burger } from "../assets/icons/burger.svg";
 import { ReactComponent as search } from "../assets/icons/search.svg";
 import { ReactComponent as bell } from "../assets/icons/bell.svg";
 import { ReactComponent as menu } from "../assets/icons/menu.svg";
-import { ReactComponent as video } from "../assets/icons/video.svg";
+import { ReactComponent as videos } from "../assets/icons/videos.svg";
 
 
 export const Container = styled.div`
@@ -59,15 +59,15 @@ Icons.Menu = styled(menu)`
     cursor: pointer;
 `;
 
-Icons.Video = styled(video)`
-    width: 30px;
-    height: 30px;
+Icons.Video = styled(videos)`
+    width: 28px;
+    height: 28px;
     margin-left: 20px;
     cursor: pointer;
 `;
 
 Icons.Logo = styled.img`
-    height: 28px;
+    height: 22px;
     cursor: pointer;
 `;
 
