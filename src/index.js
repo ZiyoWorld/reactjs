@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import YouTube from './YouTube';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <YouTube />
+    <h1>Hello Lesson 10</h1>
   </React.StrictMode>
 );
 
