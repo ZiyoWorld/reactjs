@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    border: 1px solid red;
-    flex: 1;
-    height: 100vh;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #000;
     overflow-y: scroll;
+    padding: 24px;
+
     ::-webkit-scrollbar{
     width: 6px;
     height: 15px;

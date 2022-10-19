@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { sidebar } from '../../utils/sidebar';
+import sidebar  from '../../utils/sidebar';
 import { Container, ItemWrapper, Title, Wrapper } from './style';
 
 
@@ -15,10 +15,10 @@ export default class Sidebar extends Component{
                         title && <Title title>{title}</Title>
                        } 
                         {
-                            data.map( ({icon: Icon, id, title: subTitle})=>{
+                            data.map( ({icon, id, title: subTitle})=>{
                                 return(
                                     <ItemWrapper key={id}>
-                                        <Icon />  
+                                        <img src={icon} alt="img" />
                                         <Title>{subTitle}          </Title>
                                     </ItemWrapper>
                                 )

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 250px;
     height: 100vh;
     overflow-y: scroll;
 
@@ -42,6 +42,10 @@ export const Title = styled.div`
 export const ItemWrapper = styled.div`
    display: flex;
    align-items: center;
+`;
+export const Images = styled.img`
+    width: 16px;
+    height: 16px;
 `
     
 
