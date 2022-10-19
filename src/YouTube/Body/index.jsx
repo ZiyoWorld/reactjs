@@ -2,21 +2,20 @@ import React, {Component} from 'react';
 import { Container } from './style';
 
 import Card from "./Card";
-import { data } from '../../moke';
 
-export default class YouTube extends Component{
+
+export default class Body extends Component{
     render(){
+        const {data, onDelete} = this.props;
         return(
             <Container>
                 {
+                    data.length ? (
                     data.map( (value)=> (
-                        <Card 
-                        view="1M"
-                        time= "10 min before"
-                        name={"Mirziyod"}
-                        user={"https://yt3.ggpht.com/BTfA6iKDuezCx6RUbi604Iw5-8VT_F2I00tQagVUpasaOcpeB3eTluy_SCfaEA8gZ26iyi1q=s900-c-k-c0x00ffffff-no-rj"} video={"https://i.ytimg.com/vi/j8j0Oo8uq-o/maxresdefault.jpg"} />
+                        <Card key={value.id} value={value}  onDelete={onDelete} />
+                    )))
 
-                    ))
+                    : (<h1 style={{textAlign: "center", width: "100%" }}> Not Found</h1>)
                 }
               
             </Container>

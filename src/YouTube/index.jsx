@@ -5,9 +5,29 @@ import Body from './Body';
 
 import logo from '../assets/imgs/logo.png';
 import user from "../assets/imgs/user.jpg";
+import { data } from '../moke';
 
 export default class YouTube extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            data: data,
+        }
+    }
     render(){
+        const onFilter = (e)=>{
+            let res = data.filter( (item)=> item.title.toLowerCase().includes(e.target.value.toLowerCase()));
+            this.setState({
+                data: res,
+            })
+        }
+        const onDelete = ({id})=>{
+            console.log(id);
+            let ress = this.state.data.filter( value=> value.id !== id);
+            this.setState({
+                data: ress,
+            });
+        }
         return(
             <Container>
                 <Wrapper>
@@ -16,10 +36,10 @@ export default class YouTube extends Component{
                         <Icons.Logo src={logo} alt="Logo png" />
                     </Category>
                     <Category>
-                        <Input placeholder='search' />
+                        <Input onChange={onFilter} placeholder='search' />
                         <Icons.Search />
                     </Category>
-                    <Category end>
+                    <Category end="true">
                           <Icons.Video />
                           <Icons.Menu />
                           <Icons.Bell />
@@ -28,7 +48,7 @@ export default class YouTube extends Component{
                 </Wrapper>
                 <Container flex>
                     <Sidebar />
-                    <Body />
+                    <Body data={this.state.data} onDelete={onDelete} />
                 </Container>
             </Container>
         )
