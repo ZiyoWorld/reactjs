@@ -12,7 +12,7 @@ export const Container = styled.div`
     flex-direction: ${({flex})=> !flex &&   "column"};
     background-color: #212121;
     color: #fff;
-    height: 100vh;
+    height: 100%;
     padding: ${({flex})=> !flex &&   "0 30px"};
 `;
 export const Wrapper = styled.div`

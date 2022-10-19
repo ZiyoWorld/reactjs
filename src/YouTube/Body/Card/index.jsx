@@ -1,27 +1,37 @@
 import React, {Component} from 'react';
-import { Container, Video, Wrapper,Title, User} from './style';
+import { Container, Video, Wrapper,Title, User, Button, Ul, Li} from './style';
 
 
 
-export default class YouTube extends Component{
+export default class Card extends Component{
     render(){
-        const {video, user, name, view, time} = this.props;
+        const {video, user, view, 
+            time, title, id} = this.props.value;
+        const {onDelete} =this.props;
         return(
             <Container>
                 <Video src={video} alt="Video Img" />
                 <Wrapper>
-                    <User src={user} alt="img user"/>
+                    <User src={user.img} alt="img user"/>
                     <div>
-
-                    <Title>Lorem Ipsum is simply text of the printing</Title>
-                    <Title desc>{name}</Title>
+                    <Title>{title}</Title>
+                    <Title desc>{user.name} | {id} </Title>
                     <div style={{display:"flex" }}>
                         <Title>
-                            {view} {time}
+                            {view} {time}                     
                         </Title>
                     </div>
                  </div>
+
+                 <Button onClick={()=>onDelete({id})}>
+                                <Ul>
+                                    <Li></Li>
+                                    <Li></Li>
+                                    <Li></Li>
+                                </Ul>
+                  </Button>
                 </Wrapper>
+                
             </Container>
         )
     }

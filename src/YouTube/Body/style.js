@@ -6,6 +6,7 @@ export const Container = styled.div`
     width: 100%;
     background-color: #000;
     overflow-y: scroll;
+    height: 100vh;
     padding: 24px;
 
     ::-webkit-scrollbar{
