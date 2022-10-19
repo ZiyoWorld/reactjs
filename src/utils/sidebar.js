@@ -1,16 +1,20 @@
-import { ReactComponent as home } from "../assets/icons/home.svg";
-import { ReactComponent as trending } from "../assets/icons/trending.svg";
-import { ReactComponent as subscribe } from "../assets/icons/subscribe.svg";
-import { ReactComponent as library } from "../assets/icons/library.svg";
-import { ReactComponent as history } from "../assets/icons/history.svg";
-import { ReactComponent as video } from "../assets/icons/video.svg";
-import { ReactComponent as watchlater } from "../assets/icons/watchlater.svg";
-import { ReactComponent as like } from "../assets/icons/like.svg";
-import { ReactComponent as arrow } from "../assets/icons/arrow.svg";
-import { ReactComponent as youtube } from "../assets/icons/youtube.svg";
-import { ReactComponent as settings } from "../assets/icons/settings.svg";
-import { ReactComponent as help } from "../assets/icons/help.svg";
-import { ReactComponent as report } from "../assets/icons/report.svg";
+import  home  from "../assets/icons/home.svg";
+import trending  from "../assets/icons/trending.svg";
+import subscribe  from "../assets/icons/subscribe.svg";
+import  library  from "../assets/icons/library.svg";
+import  history  from "../assets/icons/history.svg";
+import  videos  from "../assets/icons/videos.svg";
+import  watchlater  from "../assets/icons/watchlater.svg";
+import  like  from "../assets/icons/like.svg";
+import arrow  from "../assets/icons/arrow.svg";
+import  youtube  from "../assets/icons/youtube.svg";
+import  settings  from "../assets/icons/settings.svg";
+import  help  from "../assets/icons/help.svg";
+import  report  from "../assets/icons/report.svg";
+import prof from '../assets/imgs/profil.png';
+
+
+
 
 
 
@@ -26,7 +30,9 @@ Icons.Home = styled(home)`
 `;
 
 
-export const sidebar = [
+
+
+ const sidebar = [
     {
         id: 1, 
         data: [
@@ -40,7 +46,7 @@ export const sidebar = [
         data: [
             {id: 1, title: "Library", icon: library},
             {id: 2, title: "History", icon: history},
-            {id: 3, title: "Your Videos", icon: video},
+            {id: 3, title: "Your Videos", icon: videos},
             {id: 4, title: "Watch later", icon: watchlater},
             {id: 5, title: "Liked Videos", icon: like},
             {id: 6, title: "Show more", icon: arrow},
@@ -50,14 +56,14 @@ export const sidebar = [
         id: 3, 
         title: "Subscriptions",
         data: [
-            {id: 2, title: "Mirziyod Sunatillayev", icon: youtube},
-            {id: 1, title: "Mirziyod Sunatillayev", icon: youtube},
-            {id: 3, title: "Mirziyod Sunatillayev", icon: youtube},
-            {id: 4, title: "Mirziyod Sunatillayev", icon: youtube},
-            {id: 5, title: "Mirziyod Sunatillayev", icon: youtube},
-            {id: 6, title: "Mirziyod Sunatillayev", icon: youtube},
-            {id: 7, title: "Mirziyod Sunatillayev", icon: youtube},
-            {id: 8, title: "Mirziyod Sunatillayev", icon: youtube},
+            {id: 2, title: "Mirziyod Sunatillayev", icon: prof },
+            {id: 1, title: "Mirziyod Sunatillayev", icon: prof},
+            {id: 3, title: "Mirziyod Sunatillayev", icon: prof},
+            {id: 4, title: "Mirziyod Sunatillayev", icon: prof},
+            {id: 5, title: "Mirziyod Sunatillayev", icon: prof},
+            {id: 6, title: "Mirziyod Sunatillayev", icon: prof},
+            {id: 7, title: "Mirziyod Sunatillayev", icon: prof},
+            {id: 8, title: "Mirziyod Sunatillayev", icon: prof},
         ]
     },
     {
@@ -73,4 +79,6 @@ export const sidebar = [
     },
 
 
-]
+];
+
+export default sidebar;
