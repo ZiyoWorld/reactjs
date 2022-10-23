@@ -1,62 +1,68 @@
 import React, {Component} from "react";
-import Signin from "./Signin";
-import Signup from "./Signup";
-
-const list = [
-    {id: 1, name: "Mirziyod"},
-    {id: 2, name: "Alisher"},
-    {id: 3, name: "G'afur"},
-    {id: 4, name: "Abdusalom"},
-    {id: 5, name: "Malika"},
-    {id: 6, name: "Shaxzoda"},
-    {id: 7, name: "Gulsanam"},
-    {id: 8, name: "Gulsum"},
-]
+import {Container } from './style';
 
 class App extends Component {
-
-    state = { 
-        active: true,
-        list: list,
-     }
-    render() { 
-
-        const getRes = (value)=>{
-            this.setState({
-                active: value,
-                list: list,
-            })
+    constructor(props){
+        super(props);
+        this.state = {
+            active: null,
+            count: 0,
         };
 
-        const onDelete = (id)=>{
-            let res = this.state.list.filter( (value)=> value.id !== id);
+        this.plus = this.plus.bind(this);
+
+        // console.log("constructor");
+    }
+    // componentWillMount(){ // birinchi renderdan oldin
+    //     console.log("componentWillMount");
+    // };
+    // componentDidMount(){ // renderdan keyin yuradi.
+    //     console.log(" componentDidMount");
+    // };
+
+    // componentWillReceiveProps(){ // parentdan childga prop kelgan  vaqtda 
+    //     console.log(" componentWillReceiveProps");
+    // };
+    // shouldComponentUpdate(){ // componetni update qilish yoki kelmaslik
+    //     console.log("shouldComponentUpdate");
+    //     return true;
+    // };
+
+    // componentWillUpdate(){ // renderdan oldin va kelishidan keyin
+    //     console.log("componentWillUpdate");
+    // };
+
+    // componentDidUpdate(){ // Dom Created
+    //     console.log("componentDidUpdate");
+    // };
+    // componentWillUnmount(){ // after dom elemnt removed
+    //     console.log("componentWillUnmount")
+    // };
+
+    plus(){
+        this.setState({
+            count: this.state.count + 1,
+        })
+    }
+
+    render() { 
+
+        console.log("render");
+
+        const plus = ()=>{
             this.setState({
-                list: res,
+                count: this.state.count + 1,
             })
         }
         return ( 
-            <div className="back">
-                {
-                    this.state.active ? (<Signin getRes={getRes} />)
-                    :
-                    (<Signup getRes={getRes} />)
-                    
-                }
-                <hr />
-                {
-                    this.state.list.map( (value, index)=>(
-                        
-                            <h1 key={value.id}>{value.id} {index + 1} {value.name} 
-                            
-                            <button onClick={()=> onDelete(value.id)}>Delete</button>
-                            </h1>
-                                            
-                    ))
-
-                }
-
-                
-            </div>
+            <Container>
+                <h1>React LIfe Cycle</h1>
+                <h1>Count: {this.state.count}</h1>
+                <button onClick={this.plus.bind(this)}>Click me!</button>
+                <button onClick={() => this.plus()}>Click me!</button>
+                <button onClick={this.plus}>Click me!</button>
+                <button onClick={plus}>Click me!</button>
+            </Container>
          );
     }
 }
