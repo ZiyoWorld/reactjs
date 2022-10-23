@@ -1,19 +1,16 @@
-import React, { Component } from 'react'
-import { Container } from './style';
+import React, { Component } from 'react';
 
-export default class App extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-           
-        }
+class Signup extends Component {
+    state = {  }
+    render() { 
+        const {getRes} = this.props;
+        return ( 
+            <div className='sign'>
+                <h1>Sign In</h1>
+                <button onClick={()=>getRes(true)}>Sign Up</button>
+            </div>
+         );
     }
-  render() {
-    
-    return (
-        <Container>
-          <h1>Sign up</h1>
-        </Container>
-    )
-  }
 }
+ 
+export default Signup;
