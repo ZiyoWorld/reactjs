@@ -3,14 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
-.back{
-    width: 300px;
-}
-.sign{
+
+.container {
+    display: flex;
+  }
+  
+  .link {
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .active {
+    color: green;
+  }
+  
+  .form {
+    background-color: black;
     color: white;
-    background-color: aqua;
-}
-.signup{
-    color: white;
-    background-color: green;
-}
+  }
+  
+  button {
+    margin: 10px;
+  }
