@@ -1,4 +1,3 @@
-// React lifeCycle = 7 ta
-// Bind = 3 ways
-
+// 12 - lesson Hooks 
+// 
  
