@@ -3,3 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+.back{
+    width: 300px;
+}
+.sign{
+    color: white;
+    background-color: aqua;
+}
+.signup{
+    color: white;
+    background-color: green;
+}

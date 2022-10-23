@@ -1,30 +1,16 @@
-import React, { Component } from 'react'
-import { Container, ImgWrapper, Header, Parag, Input, Wrapper, Item} from './style';
-import mobil from '../../assets/phone.png';
+import React, { Component } from 'react';
 
-export default class Signin extends Component {
-    constructor(props){
-        super(props);
-        this.state = {        
-
-        }
+class Signin extends Component {
+    state = {  }
+    render() { 
+        const {getRes} = this.props;
+        return ( 
+            <div className='signup'>
+                <h1>Sign Up</h1>
+                <button onClick={()=> getRes(false)}>Sign In</button>
+            </div>
+         );
     }
-  render() {
-    return (
-        <Container>
-          <ImgWrapper imgUrl={mobil}>
-            <Header>Sign In</Header>
-            <Header>Welcome back!</Header>
-            <Parag>Login to your account</Parag>
-            <Input placeholder='Email' margintop />
-            <Input placeholder='Password' />
-            <Wrapper>
-              <Item>Remember 
-              </Item>
-              <Item>Forgot? </Item>
-            </Wrapper>
-          </ImgWrapper>
-        </Container>
-    )
-  }
 }
+ 
+export default Signin;
