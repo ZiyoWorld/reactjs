@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ClassCom from './Classcom';
+import Root from './root';
 
 import './index.css';
 
@@ -8,7 +8,7 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <ClassCom />
+      <Root />
   </React.StrictMode>
 );
 
