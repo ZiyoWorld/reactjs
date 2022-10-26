@@ -1,16 +1,28 @@
+import React, {useState, useEffect} from "react";
 
-import React, { useState } from 'react';
+const Hooks = (props)=>{
+  const [count, setCount] = useState(props.count);
+  const [name, setName] = useState('Mirziyod');
 
-import {products} from './data';
-const Hooks = () => {
-  // const [count, setCount] = useState(0);
-  // const [name, setName] = useState('webbrain');
+  // useEffect
+  useEffect( ()=> {
+    // console.log('case 1');
+  });
 
-  // const [data, setData] = useState({
-  //   count: 0,
-  //   name: 'Mirziyod',
-  // })
+  useEffect( ()=>{
+    console.log("case 2");
+  }, []);
 
+
+  useEffect( ()=>{
+    console.log("case 3")
+    setCount(props.count);
+  }, [props.count]);
+
+  useEffect( ()=>{
+    console.log("case 4");
+  }, [name, count]);
+=======
   const [product, setProduct] = useState(products);
   const [quantity, setQuantity] = useState(0);
 
@@ -67,22 +79,20 @@ const Hooks = () => {
             })
           }
 
-        </tbody>
-      </table>
+
+  return(
+    <div style={{flex: 1}}>
+      <h1>Hooks Component</h1>
+      <h1>Count: {count}</h1>
+      <h1>Name: {name}</h1>
+
+      <input type="text" value={name} 
+      onChange={({target})=> setName(target.value)}
+      />
+      <button onClick={()=> setCount(count - 1)}>-</button>
+      <button onClick={()=> setCount(count + 1)}>+</button>
     </div>
-    // <div style={{ flex: 1 }}>
-    //   <h1>Hooks Components</h1>
-    //   <h1>Count: {data.count}</h1>
-    //   <h1>Name: {data.name}</h1>
-    //   <input
-    //     type='text'
-    //     value={name}
-    //     onChange={({target})=> setName({...data, name: target.value})}
-    //   />
-    //   <button onClick={() => setCount(count - 1)}>-</button>
-    //   <button onClick={() => setCount(count + 1)}>+</button>
-    // </div>
-  );
+  )
 };
 
 export default Hooks;
