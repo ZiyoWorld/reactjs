@@ -12,7 +12,8 @@ class Class extends React.Component {
       <div style={{ flex: 1 }}>
         <h1>Class Components</h1>
         <h1>Count: {this.state.count}</h1>
-        <button onClick={() => this.setState({ count: this.state.count - 1 })}>
+        <button 
+        onClick={() => this.setState({ count: this.state.count - 1 })}>
           -
         </button>
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>

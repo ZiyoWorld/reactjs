@@ -2,7 +2,7 @@ import React from "react";
 import Class from "./Class";
 import Hook from "./Hook";
 
-class Root extends React.Component{
+class App extends React.Component{
     render(){
         return(
             <div style={{display: "flex"}}>
@@ -12,4 +12,4 @@ class Root extends React.Component{
         )
     }
 };
-export default Root;
+export default App;
