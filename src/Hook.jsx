@@ -12,15 +12,18 @@ const Hooks = () => {
   // })
 
   const [product, setProduct] = useState(products);
-  const [quan, setQuan] = useState(0);
-  const [pri, setPris] = useState(119);
-  const [tot, setTot] = useState(0);
-  
-  const onCount = ()=>{
-    setQuan(...DataTransfer,);
-    setTot(pri * quan);
+  const [quantity, setQuantity] = useState(0);
+
+
+  const onPlus = ()=> {
+    setQuantity(quantity + 1);
+    
   }
-  
+  const onMinus = ()=>{
+    if(quantity > 0){
+      setQuantity(quantity - 1);
+    }
+  }
   return (
 
     <div className='container'>
@@ -46,16 +49,16 @@ const Hooks = () => {
                       <p>{value.productindex}</p>
                     </div>
                   </td>
-                  <td>${pri}</td>
+                  <td>${value.price}</td>
                   <td className='quantity'>
                     <div className='quanwrap'>
-                    <span>-</span>
-                    <span className='money'>{quan}</span>
-                    <span onClick={onCount}> + </span>
+                    <span onClick={onMinus}>-</span>
+                    <span className='money'>{quantity}</span>
+                    <span onClick={onPlus}> + </span>
                     </div>
                   </td>
                   <td>
-                    {tot}
+                    {value.total}
                   </td>
                   <td>
                    <button>Delete</button>
