@@ -1,27 +1,58 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  width: 100%;
+  flex: 3;
+  padding: 20px;
+}
+table, tr, th{
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+}
+table{
+  width: 100%;
+}
+tr{
+  min-height: 35px;
+}
+tr:hover{
+  background-color: rgb(173, 172, 171);
+}
+img{
+  width: 60px;
+  height: 6;
+}
+.products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quantity{
+  margin: 0;
+  padding: 0;
+}
+.quanwrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
 }
 
-.container {
-    display: flex;
-  }
+.money{
+  color: black;
+  font-size: 18px;
+}
+span{
+  background-color: rgb(8, 247, 167);
+  padding: 5px 7px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+span:active{
+  transform: scale(1.1);
   
-  .link {
-    margin: 10px;
-    cursor: pointer;
-  }
-  
-  .active {
-    color: green;
-  }
-  
-  .form {
-    background-color: black;
-    color: white;
-  }
-  
-  button {
-    margin: 10px;
-  }
+}
