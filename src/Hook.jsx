@@ -13,6 +13,7 @@ const Hooks = (props)=>{
     console.log("case 2");
   }, []);
 
+
   useEffect( ()=>{
     console.log("case 3")
     setCount(props.count);
@@ -21,6 +22,63 @@ const Hooks = (props)=>{
   useEffect( ()=>{
     console.log("case 4");
   }, [name, count]);
+=======
+  const [product, setProduct] = useState(products);
+  const [quantity, setQuantity] = useState(0);
+
+
+  const onPlus = ()=> {
+    setQuantity(quantity + 1);
+    
+  }
+  const onMinus = ()=>{
+    if(quantity > 0){
+      setQuantity(quantity - 1);
+    }
+  }
+  return (
+
+    <div className='container'>
+      <table>
+        <thead>
+          <tr>
+            <th>Products</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            product.map( (value)=> {
+              return(
+                <tr key={value.id}>
+                  <td className='products'>
+                    <img src={value.img} alt="img" />
+                    <div>
+                      <b>{value.name}</b>
+                      <p>{value.productindex}</p>
+                    </div>
+                  </td>
+                  <td>${value.price}</td>
+                  <td className='quantity'>
+                    <div className='quanwrap'>
+                    <span onClick={onMinus}>-</span>
+                    <span className='money'>{quantity}</span>
+                    <span onClick={onPlus}> + </span>
+                    </div>
+                  </td>
+                  <td>
+                    {value.total}
+                  </td>
+                  <td>
+                   <button>Delete</button>
+                  </td>
+                </tr>              )
+            })
+          }
+
 
   return(
     <div style={{flex: 1}}>
