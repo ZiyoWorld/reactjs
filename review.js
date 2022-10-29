@@ -26,6 +26,12 @@
 // 12. class and hooks, useState, 
 // 12. useEffect
 
+
+// 13. useEffect
+// 14. useReducer - dispatch
+//  2 dars hozirda ustoz ketadigan joyidan boshlab ketaolaman.
+
+
 // 13. useReducer - dispatch
 
 
@@ -37,3 +43,4 @@
 //5. creteContext
 //6. put to the store
 //7. useContext
+
