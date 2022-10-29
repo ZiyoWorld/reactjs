@@ -24,7 +24,16 @@
 // 11.React life Cycle and Binding- 4 xil turi
 
 // 12. class and hooks, useState, 
+// 12. useEffect
 
-// 13. useEffect
-// 14. useReducer - dispatch
-//
+// 13. useReducer - dispatch
+
+
+// 14 . Context API
+//1. state management?
+//2. prop dirilling?
+//3. lifting state up?
+//4. useContext
+//5. creteContext
+//6. put to the store
+//7. useContext
