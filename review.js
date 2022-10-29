@@ -27,4 +27,5 @@
 
 // 13. useEffect
 // 14. useReducer - dispatch
-//
+//  2 dars hozirda ustoz ketadigan joyidan boshlab ketaolaman.
+
