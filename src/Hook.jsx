@@ -1,6 +1,6 @@
 import React, {useState, useReducer} from "react";
 
-const Hooks = ()=>{
+const Hooks = ()=> {
   const [count, setCount] = useState(0);
   const [name, setName] = useState('Mirziyod');
 
@@ -18,27 +18,8 @@ const Hooks = ()=>{
   function onHandler(e){
     setChange(e.target.value);
   }
-=======
-  // useEffect
-  useEffect( ()=> {
-    // console.log('case 1');
-  });
-
-  useEffect( ()=>{
-    console.log("case 2");
-  }, []);
-
-
-  useEffect( ()=>{
-    console.log("case 3")
-    setCount(props.count);
-  }, [props.count]);
-
-  useEffect( ()=>{
-    console.log("case 4");
-  }, [name, count]);
-=======
-  const [product, setProduct] = useState(products);
+ 
+  const [product, setProduct] = useState();
   const [quantity, setQuantity] = useState(0);
 
 
@@ -90,34 +71,11 @@ const Hooks = ()=>{
                   <td>
                    <button>Delete</button>
                   </td>
-                </tr>              )
+                </tr>)
             })
           }
-
-
-
-  return(
-    <div style={{flex: 1}}>
-      <h1>Hooks Component</h1>
-      <h1>Count: {count}</h1>
-      <h1>Counter: {counter}</h1>
-      <select name="" id=""
-      onChange={onHandler} >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button onClick={()=>dispatch({type: "byamount", payload: Number(change),})}>{change}</button>
-
-      <button onClick={()=>dispatch({type: "minus"})}>-</button>
-      <button onClick={()=>dispatch({type: "plus"})}>+</button>
-      <input type="text" value={name} 
-      onChange={({target})=> setName(target.value)}
-      />
-      <button onClick={()=> setCount(count - 1)}>-</button>
-      <button onClick={()=> setCount(count + 1)}>+</button>
+          </tbody>
+        </table>
     </div>
   )
 };
