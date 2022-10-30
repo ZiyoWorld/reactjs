@@ -1,3 +1,6 @@
+
+// project
+
 // takrorlash 
 // 1. history about react and single page application 
 // 2. props and components and children import export
@@ -43,4 +46,5 @@
 //5. creteContext
 //6. put to the store
 //7. useContext
+
 
