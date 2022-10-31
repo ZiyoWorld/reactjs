@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
-import { StudentContext } from "../../context";
+import { StudentContext } from "../../context/Students.js";
 import {Container, Title} from './style';
 
 
 function Navbar(){
 
-    const [data] = useContext(StudentContext)
+    const [data] = useContext(StudentContext);
     return(
         <Container>
             <Title>Students {data.length}</Title>
