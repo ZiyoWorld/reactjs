@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 350px;
     height: 450px;
-    border: 1px solid #000;
     margin-top: 40px;
     display: flex;
     justify-content: center;
@@ -13,43 +12,18 @@ export const Container = styled.div`
 `;
 
 export const Wrap = styled.div`
-    width: 30px;
-    height: 12px;
-    border: 1px solid #000;
-    border-radius: 12px;
+    margin-left: auto;
+    margin-right: 35px;
 `;
-export const Cycle = styled.div`
-   width: 10px;
-   height: 10px;
-   background-color: #000;
-   border-radius: 50%;
-   animation-name: anim1;
-   animation-duration: 1s;
-   animation-fill-mode: forwards;
-   cursor: pointer;
-   @keyframes anim1 {
-    0%{
-        margin-left:${({checked})=> checked ? "0px" : "18px" };
-        width: 10px;
-        background-color: dark;
-    }
-    50%{
-        margin-left: ${({checked})=> checked ? "18px" : "0px" };
-        width: 10px;
-        background-color: yellow;
-    }
-   }
-`
 
 export const Title = styled.div`
-
     font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
     line-height: 80px;
     text-align: center;
-    color: #224957;
+    color: ${({color})=> color};
     margin: 15px 0;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
@@ -61,7 +35,7 @@ export const Desc = styled.div`
     font-size: 16px;
     line-height: 20px;
     text-align: center;
-    color: #224957;
+    color: ${({color})=> color};
 `;
 export const Input = styled.input`
     background: #224957;
@@ -94,6 +68,7 @@ export const Check = styled.input`
     background: #224957;
     border-radius: 5px;
     margin-right: 10px;
+    
     cursor: pointer;
 `;
 export const Span = styled.div`
@@ -103,7 +78,7 @@ export const Span = styled.div`
     font-size: 16px;
     line-height: 17px;
     /* identical to box height */
-    color: #093545;
+    color: ${({color})=> color};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,7 +91,7 @@ export const Forget = styled.div`
     font-weight: 500;
     font-size: 16px;
     line-height: 17px;
-    color: #000;
+    color: ${({color})=>color};
     cursor: pointer;
 `;
 

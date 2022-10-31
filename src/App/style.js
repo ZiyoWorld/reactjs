@@ -7,6 +7,7 @@ export const Container = styled.div`
     align-items: center;
     height: 100vh;
     width: 100%;
+    background-color: ${({color})=> color}; 
 
 `;
 
