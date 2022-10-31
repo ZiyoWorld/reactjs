@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
-import { StudentContext } from "../../context";
+import React from "react";
+import { Student } from "../../context/Students";
 
 import {Container} from './style';
 
+const  Body = ()=> {
 
-function Body(){
-
-    const [students, setStudents] = useContext(StudentContext);
+    const [students, setStudents] = Student();
     
     const onDelete = (id)=>{
         let res = students.filter((st)=> st.id !== id);

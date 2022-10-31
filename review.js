@@ -1,49 +1,115 @@
+// Birinchi dars
 
-// takrorlash 
-// 1. history about react and single page application 
-// 2. props and components and children import export
-// 3. state, setState, select, - o'zgaradigan qiymatni kuzatib yuradi. SetState - qayta renderlarydi.
-// 4. funtion call, multi-state-change, student list > arryalarni o'zgarirish
-// function props blan chaqirish, ()=> onChange()
-// multi-state-change [e.target.name]: e.target.value,
+// npx create-react-app
+// package.json, src, public
+// single page applicate
+// virtual ReactDOM
+// ReactDOM.render()
+// jsx
+// import
 
-// 5. Crud, functions 
-// delete - o'zi beilan kelgan iddagini o'chiradi.
-// select map bilan chiqariladi
-// add - stateni o'zgartiramiz
-// update - active bilan quyib boriladi.
+// =======================
+// =======================
 
+// Ikkinchi dars
+// props, components
+// export import
+// props, children
+// components
 
-// 6. styled -components 
-// {css}, props, function call, 
+// =======================
+// =======================
 
-// 7. inheritance, :keyframes, 
-// themprovider, global style,
-// 8. reactjsda You tube clone
-// 9. reactjsda You tube clone(davomi);
-// 10  map() and render
-// 11.React life Cycle and Binding- 4 xil turi
+// uchinchi dars
+// state
+// constructor
+// super
+// onChange, onClick
+// input, checkbox, select
 
-// 12. class and hooks, useState, 
-// 12. useEffect
+// =======================
+// =======================
 
+// To'rtinchi dars
+// function call
+// multi state change
+// student list => add delete filter
 
-// 13. useEffect
-// 14. useReducer - dispatch
-//  2 dars hozirda ustoz ketadigan joyidan boshlab ketaolaman.
+// =======================
+// =======================
+// beshinchi dars
+// styled
+// { css }
+// props
+// function call
 
+// =======================
+// =======================
+// inheritance
+// keyframse -> animation
+// prototypes
+// project
+// theme
 
-// 13. useReducer - dispatch
+// =======================
+// =======================
+// YouTube Clone
+// Lifting state up
+// Search movies
+// delete moveies
 
+// =======================
+// =======================
+// if()
+// ternary operator (?)
+// navbar, attr, container, Components
 
-// 14 . Context API
-//1. state management?
-//2. prop dirilling?
-//3. lifting state up?
-//4. useContext
-//5. creteContext
-//6. put to the store
-//7. useContext
-// use Context
-// I repeated this lesson
+// vazifa
+// 1 => 2ta components => signin, signup
+// 2 => UI
+// 3 => functional buttons
 
+// =======================
+// =======================
+// ReactJS => 7 Lifecycles
+// bind => 3 ways
+
+// =======================
+// =======================
+// Class vs Hooks components
+// return vs without return hooks components
+// this in class and hooks
+// useState
+// primitive vs non primitive
+
+// =======================
+// =======================
+// useEffect
+
+// =======================
+// =======================
+// useReducer
+
+// =======================
+// =======================
+// state management?
+// prop drilling?
+// lifting state up?
+
+// =======================
+// =======================
+// useContext
+// createContext
+// put to the store
+// useContext
+
+// =======================
+// =======================
+// useContext advanced
+// useContext
+// file management
+// how to make general context
+// useReducer with useContext
+
+// =======================
+// =======================
