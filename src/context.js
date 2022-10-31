@@ -3,7 +3,7 @@ import React, {createContext, useState} from "react";
 export const StudentContext = createContext();
 
 
-const StudentsList = ({children},)=>{
+const StudentsList = ({children})=>{
 
     const [students, setStudents] = useState([
         {id: 1, name: "Eshmat", surname: "Eshmatov"},
@@ -23,3 +23,4 @@ const StudentsList = ({children},)=>{
 };
 
 export default StudentsList;
+
