@@ -6,33 +6,34 @@ import {
     Input, 
     Title, 
     Wrapper,
-    Check, Span, Forget, Button, Wrap, Cycle
+    Check, Span, Forget, Button, Wrap,
  } from "./style";
+ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
-const Mobile = ()=>{
-
-    const [checked, setChecked] = useState(false);
-
-    const onChecked = ()=>{
-        setChecked(true);
-    }
+const Mobile = ({onChange, mode, them})=>{
+ 
     return(
         <Container>
             <Wrap>
-                <Cycle onClick={onChecked} checked={checked} />
+            <DarkModeSwitch
+                style={{ marginBottom: '2rem' }}
+                checked={mode}
+                onChange={onChange}
+                size={30}
+             />
             </Wrap>
-            <Title>Sign In</Title>
-            <Desc>
+            <Title color={them.title}>Sign In</Title>
+            <Desc color={them.title}>
             Sign in and start managing your candidates!
             </Desc>
             <Input placeholder="Login" />
             <Input placeholder="Password" />
             <Wrapper>
-                <Span>
-                <Check type={"checkbox"}     className="check" />
+                <Span color={them.title}>
+                <Check  type={"checkbox"}     className="check" />
                     Remember me
                 </Span>
-                <Forget>
+                <Forget color={them.forget} >
                     Forgot password?
                 </Forget>
             </Wrapper>
