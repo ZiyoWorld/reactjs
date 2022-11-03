@@ -1,19 +1,22 @@
-import React, {useContext} from "react";
-import { StudentContext } from "../../context/Students.js";
+import React, {memo} from "react";
+
 import {Container, Title} from './style';
 
 
-function Navbar(){
+function Navbar({data, dataCall}){
 
-    const [data] = useContext(StudentContext);
+    
+    console.log("child render");
+
+
     return(
-        <Container>
-            <Title>Students {data.length}</Title>
-            <Title>Home</Title>
-            <Title>About</Title>
+        <Container> 
+            <Title>{data.title}</Title>
+            <Title>{dataCall("Home").title}</Title>
+            <Title>{dataCall("About").title}</Title>
             <Title>My group</Title>
             <Title>Contact</Title>
         </Container>
     )
 }
-export default Navbar;
+export default memo(Navbar);

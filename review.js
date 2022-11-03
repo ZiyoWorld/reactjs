@@ -118,3 +118,15 @@
 // localStorage.getItem(name);
 // localStorage.removeItem(name);
 // localStorage.clear();
+
+// =======================
+// =======================
+
+// react - optimazation , memo => child Component trigger re-render
+// memo - asosiy yordam beruvchi buyruq 2 ta qoidasi doim child parentda re-render bo'lish 
+// trigger, re-render
+// memo and useMemo()
+// ikki object bir biriga teng bo'lmaydi.
+// memo and use Memo memo
+// useCallback() vs useMemo 
+
