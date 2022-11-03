@@ -1,24 +1,27 @@
-import React, {useState} from "react";
+import React, {useState, useMemo, useCallback} from 'react';
 import {Container} from './style';
+import Navbar from '../Navbar';
 
 const  Body = ()=> {
     
-   const [counter, setCounter] = useState(Number(  JSON.parse(localStorage.getItem("count"))));
+    const [counter, setCounter] = useState(0);
+   console.log("Parent render");
 
-   const plus = ()=>{
-    localStorage.setItem('count', JSON.stringify( {data: counter + 1}));
-    setCounter(counter + 1);
-   }
-   const minus = ()=>{ 
-    setCounter(counter - 1);
-   }
+   const data = useMemo( ()=>{
+    return {title: "Mirziyod"}
+   }, []);
+   const dataCall = useCallback( (param)=>{
+    return {title: param};
+   }, []);
+   
+   
     return(
         <Container>
+            <Navbar data = {data} dataCall={dataCall} />
            <h1>Counter {counter}</h1>
-           <button onClick={plus}>+</button>
-           <button onClick={minus}>-</button>
-           <button onClick={()=> localStorage.removeItem("count")}>delete Count</button>
-           <button onClick={()=>localStorage.clear()}>clear</button>
+           <button onClick={()=>setCounter(counter + 1)}>+</button>
+           <button onClick={()=>setCounter(counter - 1)}>-</button>
+           
         </Container>
     )
 }
