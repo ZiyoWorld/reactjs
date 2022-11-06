@@ -1,7 +1,8 @@
 import React from "react";
-import Controlled from "../components/Controlled";
-import UnControlled from "../components/UnControlled";
-
+import Fetch from "../components/Fetch";
+import Login from "../components/Login";
+import Add from "../components/Add";
+import Update from "../components/Update";
 
 import { Container } from "./style";
 
@@ -9,8 +10,10 @@ function App(){
 
     return(
         <Container>
-           <Controlled />
-           <UnControlled />
+          <Login />
+          <Fetch />
+          <Add />
+          <Update />
         </Container>
     )
 }
