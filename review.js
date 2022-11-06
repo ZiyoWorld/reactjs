@@ -130,3 +130,14 @@
 // memo and use Memo memo
 // useCallback() vs useMemo 
 
+// useRef
+// Controlled and UnControlled
+
+
+// restFull API
+// fetch 
+// endpoint, url, link, api
+// CRUD
+// GET, PUT, POST, DELETE
+// swagger
+
