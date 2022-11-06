@@ -140,4 +140,7 @@
 // CRUD
 // GET, PUT, POST, DELETE
 // swagger
+// token
+// auth = > authorization
+// 200 => 201=> 401=> 404=> 415=> 500
 

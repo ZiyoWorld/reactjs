@@ -1,50 +1,66 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function Fetch() {
-    const [students, setStudents] = useState([]);
-    const [selected, setSelected] = useState({});
+export const Fetch = () => {
+  const [students, setStudents] = useState([]);
 
+  const getUsers = (id) => {
+    return fetch(`https://houzing-app.herokuapp.com/api/v1/houses/list?page=0`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+      .then((res) => res.json())
+  };
 
-    const getUsers = (id)=>{
-        
-       return (fetch(`https://jsonplaceholder.typicode.com/users${id? `/${id}` : ''} `, {
-            //method: "GET"
-        })
-        .then( (res)=> res.json())
-        )
-    }
+  const getData = () => {
+    getUsers().then( (res)=>{
+        setStudents(res?.data)
+    })
+  };
 
-    useEffect( ()=>{
-       getUsers().then( (res)=> setStudents(res));
-    }, []);
-
-    const getInfo = (id)=>{
-        getUsers(id).then( (res)=>{
-            setSelected(res);       
-        })
-    }
-
+  const getInfo = (id) => {
+    return fetch(`https://houzing-app.herokuapp.com/api/v1/houses/${id}`, {
+      method: 'Delete',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res?.success) {
+          getUsers();
+        }
+      });
+  };
   return (
-    <div style={{display: 'flex'}}>
-        <h1>Students List</h1>
-        <div style={{flex: 1}}>
-        {
-            students.map( (value)=>{
-                return(
-                    <h2 key={value.id}>Name: {value.id} {value.name} <button onClick={()=>getInfo(value.id)}>getInfo</button></h2>
-                    )
-                })
-            }
-        </div>
-        <div style={{flex: 1}}>
-            <div key={selected?.id}>
-                <h1>Name: {selected?.name}</h1>
-                <h2>Username: {selected?.username}</h2>
-                <h3>Email: {selected?.email}</h3>
-            </div>    
-        </div>
+    <div
+      style={{
+        display: 'flex',
+      }}
+    >
+      <button onClick={getData}>get data</button>
+      <div style={{ flex: 1 }}>
+        {students.map((value) => (
+          <h1 key={value.id}>
+            {value.id} 
+            {value.address}{' '}
+            <button onClick={() => getInfo(value.id)}>delete</button>
+            <button onClick={() => localStorage.setItem('id', value.id)}>
+              select
+            </button>
+            <hr />
+          </h1>
+        ))}
+      </div>
+      <div style={{ flex: 1 }}>
+        {/* <div key={selected?.id}>
+          <h1>Name: {selected?.name} </h1>
+          <h2>Username: {selected?.username} </h2>
+          <h3>Email: {selected?.email} </h3>
+        </div> */}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Fetch;
