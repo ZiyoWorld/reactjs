@@ -119,8 +119,7 @@
 // localStorage.removeItem(name);
 // localStorage.clear();
 
-// =======================
-// =======================
+
 
 // react - optimazation , memo => child Component trigger re-render
 // memo - asosiy yordam beruvchi buyruq 2 ta qoidasi doim child parentda re-render bo'lish 
@@ -130,9 +129,14 @@
 // memo and use Memo memo
 // useCallback() vs useMemo 
 
-// useRef
-// Controlled and UnControlled
+// =======================
+// =======================
 
+// useRef
+// Controlled and UnControlled  
+
+// =======================
+// =======================
 
 // restFull API
 // fetch 
@@ -143,4 +147,14 @@
 // token
 // auth = > authorization
 // 200 => 201=> 401=> 404=> 415=> 500
+
+// =======================
+// =======================
+
+// axios
+// yarn add axios
+// axios and fetch 
+// Vanilla js and 3rd part library
+// manually vs automatic
+
 
