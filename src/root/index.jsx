@@ -1,7 +1,9 @@
 import React from 'react'
-import { useState } from 'react';
-import Signin from '../components/Funcbtn/Signin';
-import Signup from '../components/Funcbtn/Signup';
+
+import Reducer from '../components/Reducer';
+// import { useState } from 'react';
+// import Signin from '../components/Funcbtn/Signin';
+// import Signup from '../components/Funcbtn/Signup';
 // import Styleded from '../components/Styleded';
 // import Student from '../components/Student';
 // import State from '../components/State';
@@ -11,12 +13,12 @@ import Signup from '../components/Funcbtn/Signup';
 
 const Root = ()=> {
 
-  const [value, getValues]= useState(true);
+  // const [value, getValues]= useState(true);
 
-  const getValue =(e)=>{
-    console.log(e);
-    getValues(!e);
-  }
+  // const getValue =(e)=>{
+  //   console.log(e);
+  //   getValues(!e);
+  // }
   return (
     <div>
       <div>
@@ -38,10 +40,12 @@ const Root = ()=> {
       <AdvancedClass /> */}
       {/* <Styleded /> */}
       {
-        value ?  <Signin getValue={getValue} /> :   <Signup getValue={getValue} />
+        // value ?  <Signin getValue={getValue} /> :   <Signup getValue={getValue} />
       }
      
-    
+    {/* <Bind /> */}
+
+    <Reducer />
 
 
       </div>
