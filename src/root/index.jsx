@@ -1,5 +1,8 @@
 import React from 'react'
-import Styleded from '../components/Styleded';
+import { useState } from 'react';
+import Signin from '../components/Funcbtn/Signin';
+import Signup from '../components/Funcbtn/Signup';
+// import Styleded from '../components/Styleded';
 // import Student from '../components/Student';
 // import State from '../components/State';
 // import AdvancedClass from '../components/AdvancedClass';
@@ -7,6 +10,13 @@ import Styleded from '../components/Styleded';
 
 
 const Root = ()=> {
+
+  const [value, getValues]= useState(true);
+
+  const getValue =(e)=>{
+    console.log(e);
+    getValues(!e);
+  }
   return (
     <div>
       <div>
@@ -26,7 +36,14 @@ const Root = ()=> {
 
       <h1>Advanced CRUD</h1>
       <AdvancedClass /> */}
-      <Styleded />
+      {/* <Styleded /> */}
+      {
+        value ?  <Signin getValue={getValue} /> :   <Signup getValue={getValue} />
+      }
+     
+    
+
+
       </div>
     </div>
   )

@@ -9,3 +9,12 @@ table, tr, td, th{
 table{
     width: 100%;
 }
+.signin{
+    width: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
