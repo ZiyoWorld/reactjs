@@ -157,4 +157,15 @@
 // Vanilla js and 3rd part library
 // manually vs automatic
 
+// =======================
+// =======================
+// React Router Dom 5
+// Browser Router
+// Nawlink, Link
+// Router
+// UseHistory, UseLocation => window.location 
+// Switch
+// usePrams
+// privateRoute
+
 

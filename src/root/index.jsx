@@ -1,54 +1,43 @@
-import React from 'react'
-
-import Reducer from '../components/Reducer';
-// import { useState } from 'react';
-// import Signin from '../components/Funcbtn/Signin';
-// import Signup from '../components/Funcbtn/Signup';
-// import Styleded from '../components/Styleded';
-// import Student from '../components/Student';
-// import State from '../components/State';
-// import AdvancedClass from '../components/AdvancedClass';
-
-
+import React from 'react';
+import Home from '../components/Home';
+import Pages from '../components/Pages';
+import Templates from '../components/Templates';
+import Elements from '../components/Elements';
+import Navbar from '../components/Navbar';
+import { Route, Switch, Redirect, useLocation } from 'react-router-dom';
 
 const Root = ()=> {
-
-  // const [value, getValues]= useState(true);
-
-  // const getValue =(e)=>{
-  //   console.log(e);
-  //   getValues(!e);
-  // }
+  const location = useLocation();
+  console.log(location)
+  const query = new URLSearchParams(location.search);
+  console.log(query.get('status'));
   return (
     <div>
-      <div>
-        {/* <h1>Props</h1>
-        <Student name="Mirziyod" age="19" country="Uzbekistan" />
-        <Student name="Mirziyod" age="19" country="Uzbekistan" />
-        <Student name="Mirziyod" age="19" country="Uzbekistan" />
-        <Student name="Mirziyod" age="19" country="Uzbekistan" />
-        <Student name="Mirziyod" age="19" country="Uzbekistan" >
-          <h1>Uzr Go'zal from Bahrom Nazarov</h1>
-        </Student>
-      </div>
-      <hr />
-
-      <h1>State</h1>
-      <State />
-
-      <h1>Advanced CRUD</h1>
-      <AdvancedClass /> */}
-      {/* <Styleded /> */}
-      {
-        // value ?  <Signin getValue={getValue} /> :   <Signup getValue={getValue} />
-      }
-     
-    {/* <Bind /> */}
-
-    <Reducer />
-
-
-      </div>
+      <h1>
+        We are here  {location.pathname}
+      </h1>
+      <Switch>
+      <Route exact path={"/"}>
+        <Redirect to={"/home"} />
+      </Route>
+      <Route path={"/home"} component={Navbar}/>
+      <Route path={"/elements"} component={Navbar}/>
+      <Route path={"/pages"} component={Navbar}/>
+      <Route path={"/templates"} component={Navbar}/>
+      </Switch>
+      <Switch>
+      <Route exact path={"/"} />
+      {/* <Route path={"quy"}>
+        <Home />
+      </Route> */}
+      <Route path={"/home"} component={Home}/>
+      <Route path={"/elements"} component={Elements}/>
+      <Route path={"/pages"} component={Pages}/>
+      <Route path={"/templates"} component={Templates}/>
+      <Route path={"*"}>
+        <h1>404 Not Found</h1>
+      </Route>
+      </Switch>
     </div>
   )
 }
