@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import StudentsList from './context';
+import  Mode from './context';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <StudentsList>
+    <Mode>
       <App />
-    </StudentsList>
+    </Mode>
   </React.StrictMode>
 );
 
