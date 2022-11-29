@@ -1,3 +1,4 @@
+
 export const student = [
     {id: 1, name: "Abubakr", status: "IT"},
     {id: 2, name: "Umar", status: "BI"},

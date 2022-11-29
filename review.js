@@ -168,4 +168,15 @@
 // usePrams
 // privateRoute
 
+// =======================
+// =======================
+ // React Router Dom 6
+ //redirect => navigate
+ // useHistory => useNavigate
+ // NavLink activeStyle => style={({isActive})}
+// Router, Routes 
+// component => element
+//  Outlet 
+// useParams
+// privateRoute
 
