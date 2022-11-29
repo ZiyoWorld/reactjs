@@ -5,7 +5,7 @@ const Pages = () => {
     <div>
       
       <h1>
-      React Router Dom5 Pages 
+      React Router Dom5 Pages
       </h1>
     </div>
   )

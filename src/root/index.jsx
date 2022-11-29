@@ -1,36 +1,43 @@
 import React from 'react';
-import Home from '../components/Home';
-import Pages from '../components/Pages';
-import Templates from '../components/Templates';
-import Elements from '../components/Elements';
-//import Navbar from '../components/Navbar';
-import { Route, useLocation, Navigate, Routes } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+
+import { Route, useNavigate, useLocation, Navigate, Routes } from 'react-router-dom';
+import { navbar } from '../utils/navbar';
 
 const Root = ()=> {
   const location = useLocation();
-  console.log(location)
+  console.log(location);
+  const navigate = useNavigate();
   const query = new URLSearchParams(location.search);
   console.log(query.get('status'));
+  const token = JSON.parse(localStorage.getItem('token'));
+  console.log(token, typeof token);
   return (
     <div>
-      <h1>
-        We are here  {location.pathname}
-      </h1>
-      <Routes>
-      <Route exact path={"/"} element={<Navigate to={"/home"} />} />
-
-      {/* <Route path={"/home"} component={Navbar}/>
-      <Route path={"/elements"} component={Navbar}/>
-      <Route path={"/pages"} component={Navbar}/>
-      <Route path={"/templates"} component={Navbar}/> */}
-      
-      <Route exact path={"/"} element={<Home />}  />
-      <Route path={"/home"} element={<Home />}/>
-      <Route path={"/elements"} element={<Elements />}/>
-      <Route path={"/pages"} element={<Pages />}/>
-      <Route path={"/templates"} element={<Templates />} />
-      <Route path={"*"} element={ <h1>404 Not Found</h1>} />
-      </Routes>
+      <h1>We are here {location.pathname} </h1>
+        <button onClick={()=>{ 
+          localStorage.removeItem('token')
+          navigate("/elements");
+        }}>Log out</button>
+        
+        <Routes>
+          <Route element={<Navbar />}>
+            {navbar.map( ({path, elements, id, isPrivate})=>{
+                return !isPrivate && <Route key={id} path={path} element={elements} />
+                })}
+            {navbar.map( ({path, elements,id, isPrivate})=>{
+                return isPrivate && <Route key={id} path={path} element={token ? elements : <Navigate to={"/elements"} /> } />
+            })}
+            {/* <Route exact="true" path={"/"} element={<Navigate to={"/home"} />} />
+            <Route exact="true" path={"/"} element={<Home />}  />
+            <Route path={"/home"} element={<Home />}/>
+            <Route path={"/elements"} element={<Elements />}/>
+            <Route path={"/pages"} element={
+             token ? <Pages /> : <Navigate to={"/elements"} />}/>
+            <Route path={"/templates"} element={<Templates />} />
+            <Route path={"*"} element={ <h1>404 Not Found</h1>} /> */}
+          </Route>
+        </Routes>
     </div>
   )
 }

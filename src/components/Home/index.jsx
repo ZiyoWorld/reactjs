@@ -10,7 +10,7 @@ const Home = () => {
     {id: 5, name: "Normat", desc: "Eshmat IT guy" },
     {id: 6, name: "Ne'mat", desc: "Eshmat IT guy" },
   ]);
-
+ 
   const [selected, setSelected] = useState({});
 
   const navigate = useNavigate();
@@ -21,10 +21,11 @@ const Home = () => {
       {
         students.map( (value)=>{
           return(
-            // <h1>{value.id} {value.name} <button onClick={()=>setSelected(value)}>Select</button> 
-            // </h1>
-            <h1>
-              {value.id} {value.name} <button onClick={()=> navigate.push(`home/:${value.id}`)}>Selected</button>
+            <h1 key={value.id}>
+              {value.id} {value.name} <button onClick={ ()=> {
+                navigate(`home/:${value.id}`)
+                setSelected(value);
+              }}>Selected</button>
             </h1>
           )
         })
@@ -33,7 +34,6 @@ const Home = () => {
       <div style={{flex: 1}}>
         <h1>Selected</h1>
         <h1>{selected?.id} {selected?.name}</h1>
-
       </div>
     </div>
   )

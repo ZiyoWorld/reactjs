@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Link = styled(NavLink)`
-    color: #fff;
+    color: ${(props)=> props.active ? "red" : "white"};
     font-weight: 600;
     font-size: 24px;
     text-decoration: none;

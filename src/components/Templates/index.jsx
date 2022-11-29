@@ -5,6 +5,7 @@ const Templates = () => {
     <div>
        <h1>
             React Router Dom5 Templates  
+            
       </h1>
     </div>
   )
