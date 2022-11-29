@@ -168,7 +168,6 @@
 // usePrams
 // privateRoute
 
-
 // =======================
 // =======================
  // React Router Dom 6
@@ -180,5 +179,4 @@
 //  Outlet 
 // useParams
 // privateRoute
-
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useRef} from 'react'
 import { useNavigate } from 'react-router-dom';
 
@@ -29,3 +30,17 @@ const Elements = () => {
   )
 }
 export default Elements;
+=======
+import React from 'react'
+
+const Elements = () => {
+  return (
+    <div>
+      <h1>
+      React Router Dom5 Elements  
+      </h1>
+      </div>
+  )
+}
+export default Elements;
+>>>>>>> a5b6eb7133a8697980b51c56d07b9ecc57500303
