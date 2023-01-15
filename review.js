@@ -189,3 +189,19 @@
     // return <Components /> 
 //} return WithCounter
 //}
+
+// =======================
+// =======================
+// React 18V => concurrent mode
+// Batching => flashSync 
+
+// useTransition 
+// startTransition
+// useDifferentValue
+
+// rv17 => suspense  => lazy
+// rv18 => suspense  => GraphQl
+
+// suspenseList = 
+// useID
+// useDebugValue
