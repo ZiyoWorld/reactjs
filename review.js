@@ -180,3 +180,12 @@
 // useParams
 // privateRoute
 
+
+// =======================
+// =======================
+// High Order Component
+// const Function = (Component) =>{
+// const WithCounter = ()=>{
+    // return <Components /> 
+//} return WithCounter
+//}
