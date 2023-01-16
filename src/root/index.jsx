@@ -1,24 +1,56 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Profiler } from 'react';
+import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 
-import useLocalStorage from '../components/getValues';
+import Counter from '../components/Counter';
+import  {Modal}  from '../components/Modal';
+// import Hover from './hover';
+const Hover = React.lazy(() => import('../components/Hover'));
 
-const List = React.lazy(() => import('../components/Home'));
-
-const Root =( )=> {
-  
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useLocalStorage('');
-
-  
-
+export const Root = () => {
+  const onRender = (
+    id,
+    phase,
+    acutalDuration,
+    baseDuraion,
+    startTime,
+    commitTime,
+    interactions
+  ) => {
+    console.table({
+      id,
+      phase,
+      acutalDuration,
+      baseDuraion,
+      startTime,
+      commitTime,
+      interactions,
+    });
+  };
   return (
     <div>
-      <h1>React 18</h1>
-      <input value={firstName} type="text" onChange={({target})=> setFirstName(target.value)} />
-      <input value={lastName} type="text" onChange={({target})=> setLastName(target.value)} />
-      {lastName}
+      <h1>React 17</h1>
+      <div>
+        <NavLink to={'/counter'}> Counter </NavLink>
+        <NavLink to={'/hover'}> Hover </NavLink>
+      </div>
+      <Routes>
+        <Route path='/counter' element={<Counter />} />
+        <Route
+          path='/hover'
+          element={
+            <React.Suspense fallback={<h1>loading...</h1>}>
+              <Hover />
+            </React.Suspense>
+          }
+        />
+      </Routes>
+      {/* <Profiler id='modal' onRender={onRender}>
+      <h1>React 17 </h1>
+      <Modal />
+       </Profiler> */}
     </div>
+   
   );
-}
+};
 
 export default Root;

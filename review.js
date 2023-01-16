@@ -205,3 +205,11 @@
 // suspenseList = 
 // useID
 // useDebugValue
+
+
+// =======================
+// =======================
+
+// lazy load
+// portal 
+// profiler => react dev tools
