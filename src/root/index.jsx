@@ -1,15 +1,14 @@
-import React, { useState, Profiler } from 'react';
+import React from 'react';
+import UseRedux from '../components/UseRedux';
 // import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 
-import MUI from '../components/Counter';
-import AntD  from '../components/Hover';
+
 
 export const Root = () => {
 
   return (
     <div>
-      <MUI />
-      <AntD />
+      <UseRedux />
     </div>
   );
 };
