@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import postsReducer from "../components/features/posts/postsSlice";
+import usersReducer from "../components/features/users/usersSlice";
 
-import counter from './Counter';
-import student from './Student';
 export const store = configureStore({
-    reducer: {
-        counter,
-        student,
-    }
+  reducer: {
+    posts: postsReducer,
+    users: usersReducer,
+  },
 });

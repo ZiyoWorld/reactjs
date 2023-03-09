@@ -119,27 +119,25 @@
 // localStorage.removeItem(name);
 // localStorage.clear();
 
-
-
 // react - optimazation , memo => child Component trigger re-render
-// memo - asosiy yordam beruvchi buyruq 2 ta qoidasi doim child parentda re-render bo'lish 
+// memo - asosiy yordam beruvchi buyruq 2 ta qoidasi doim child parentda re-render bo'lish
 // trigger, re-render
 // memo and useMemo()
 // ikki object bir biriga teng bo'lmaydi.
 // memo and use Memo memo
-// useCallback() vs useMemo 
+// useCallback() vs useMemo
 
 // =======================
 // =======================
 
 // useRef
-// Controlled and UnControlled  
+// Controlled and UnControlled
 
 // =======================
 // =======================
 
 // restFull API
-// fetch 
+// fetch
 // endpoint, url, link, api
 // CRUD
 // GET, PUT, POST, DELETE
@@ -153,7 +151,7 @@
 
 // axios
 // yarn add axios
-// axios and fetch 
+// axios and fetch
 // Vanilla js and 3rd part library
 // manually vs automatic
 
@@ -163,55 +161,53 @@
 // Browser Router
 // Nawlink, Link
 // Router
-// UseHistory, UseLocation => window.location 
+// UseHistory, UseLocation => window.location
 // Switch
 // usePrams
 // privateRoute
 
 // =======================
 // =======================
- // React Router Dom 6
- //redirect => navigate
- // useHistory => useNavigate
- // NavLink activeStyle => style={({isActive})}
-// Router, Routes 
+// React Router Dom 6
+//redirect => navigate
+// useHistory => useNavigate
+// NavLink activeStyle => style={({isActive})}
+// Router, Routes
 // component => element
-//  Outlet 
+//  Outlet
 // useParams
 // privateRoute
-
 
 // =======================
 // =======================
 // High Order Component
 // const Function = (Component) =>{
 // const WithCounter = ()=>{
-    // return <Components /> 
+// return <Components />
 //} return WithCounter
 //}
 
 // =======================
 // =======================
 // React 18V => concurrent mode
-// Batching => flashSync 
+// Batching => flashSync
 
-// useTransition 
+// useTransition
 // startTransition
 // useDifferentValue
 
 // rv17 => suspense  => lazy
 // rv18 => suspense  => GraphQl
 
-// suspenseList = 
+// suspenseList =
 // useID
 // useDebugValue
-
 
 // =======================
 // =======================
 
 // lazy load
-// portal 
+// portal
 // profiler => react dev tools
 
 // =======================
@@ -219,3 +215,4 @@
 // AntD, MUI
 // Component based library
 
+/// Redux Toolkit

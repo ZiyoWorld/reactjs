@@ -1,37 +1,39 @@
-import React, {useEffect} from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from "../../redux/Counter";
-import { getStudent } from "../../redux/Student";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  decrement,
+  increment,
+  incrementByAmount,
+} from "../../redux/counterSlice";
 
-function UseRedux() {
+const UseRedux = () => {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
 
-    const counter = useSelector((store) => store.counter);
-    const store = useSelector((store) => store.student);
-    const dispatch = useDispatch();
-    
-    useEffect(() => {
-        dispatch(getStudent());
-    },[]);
-    
-   
-    return <div>
-        <h1>UseRedux {counter.data}</h1>
-        <div>
-
-        <button onClick={()=>dispatch(increment())}>+</button>
-            <button onClick={() => dispatch(decrement({a: 5}))}>-</button>
-            
-            {
-             store.student.map((value) => {
-                    return (
-                    <h1 key={value.id}>
-                    {value.id} . {value.name}
-                    </h1>
-                    )
-                })
-            }
-        </div>
-  </div>;
-}
-
+  return (
+    <div>
+      <div>
+        <button
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+        >
+          Increment
+        </button>
+        <span>{count}</span>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(decrement())}
+        >
+          Decrement
+        </button>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(incrementByAmount({ a: 5 }))}
+        >
+          incrementByAmount
+        </button>
+      </div>
+    </div>
+  );
+};
 export default UseRedux;
