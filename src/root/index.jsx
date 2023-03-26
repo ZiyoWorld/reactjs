@@ -1,17 +1,19 @@
 import React from "react";
-import AddPostForm from "../components/features/posts/AddPostForm";
-import PostsList from "../components/features/posts/postsList";
-// import UseRedux from "../components/UseRedux";
-// import AddPostForm from "../components/features/posts/AddPostForm";
-// import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+import Fetch from "../components/Fetch";
+import Login from "../components/Login";
+import Add from "../components/Add";
+import Update from "../components/Update";
 
-export const Root = () => {
+import { Container } from "./style";
+
+function App() {
   return (
-    <div className="main">
-      <PostsList />
-      <AddPostForm />
-    </div>
+    <Container>
+      <Login />
+      <Fetch />
+      <Add />
+      <Update />
+    </Container>
   );
-};
-
-export default Root;
+}
+export default App;
